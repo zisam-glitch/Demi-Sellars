@@ -14,6 +14,7 @@ import ManageListings from './pages/ManageListings';
 import Search from './pages/Search';
 import ContactUs from './pages/ContactUs';
 import Mortgage from './pages/Mortgage';
+import MyAccount from './pages/MyAccount'
 
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/our-services' element={<Services />} />
+        <Route path='/my-account' element={<MyAccount />} />
         <Route path='/mortgage-calculator' element={<Mortgage />} />
         <Route path='/about-us' element={<About />} />
         <Route path='/contact-us' element={<ContactUs />} />

@@ -130,6 +130,11 @@ input[type="number"] {
   position: sticky;
   top: 2.25rem;
 }
+.stickyp {
+  ​position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
 .cssshadow {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -165,4 +170,71 @@ select.sort:focus {
   background-position: calc(100% - 20px) calc(1em + 3px);
   background-size: 15px 15px;
   background-repeat: no-repeat;
+}
+
+.profile .group span {
+  color: #000;
+  padding: 0;
+  font-size: 16px;
+  gap: 0px;
+  outline: 0px solid;
+}
+
+.profile .group span svg {
+  display: none;
+}
+.ant-drawer-header {
+  background-color: #f0e9fd;
+  border-bottom: 0;
+}
+.ant-drawer-body {
+  padding: 0px;
+}
+.ant-drawer-header-title {
+  justify-content: end;
+  padding: 10px 0;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-drawer .ant-drawer-header {
+  border: 0px;
+}
+.anticon svg {
+  font-size: 22px;
+}
+
+:where(.css-dev-only-do-not-override-p7e5j5).ant-drawer .ant-drawer-body {
+  padding: 0;
+}
+
+#sidebar a.active {
+  background-color: #f7f6f5;
+  border-left: 4px solid #0062d1;
+}
+#sidebar a:hover {
+  background-color: #f7f6f5;
+  border-left: 4px solid #0062d1;
+}
+
+.scrolly {
+  overflow-y: scroll;
+  height: calc(100vh - 252px);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
