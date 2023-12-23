@@ -3,11 +3,17 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { VscAccount } from "react-icons/vsc";
 import { IoCreateOutline } from "react-icons/io5";
+import { LuLogOut } from "react-icons/lu";
+import { IoHomeOutline } from "react-icons/io5";
+import { MdBookmarkBorder } from "react-icons/md";
+import { RxPencil1 } from "react-icons/rx";
+
 
 export default function Sidebar() {
   const { currentUser } = useSelector((state) => state.user);
+
   return (
-    <div className="w-[20%] bg-footer flex flex-col rounded-xl  h-[calc(100vh-252px)] ">
+    <div className="w-[20%] bg-footer flex flex-col rounded-xl h-[calc(100vh-252px)] ">
       <div className="rounded-xl h-[30%] mb-6 shadow-xl bg-white flex flex-col gap-4 p-14 justify-center items-center">
         <img
           className="w-20 h-20 rounded-full"
@@ -23,25 +29,32 @@ export default function Sidebar() {
         id="sidebar"
       >
         <NavLink
-          className=" text-[20px]  px-6 py-5 font-semibold"
+          className="text-[20px] px-6 py-5 font-semibold"
           to="/my-account"
           exact
+          activeClassName="text-blue-500 border-r-4 border-blue-500"
         >
           <span className="flex items-center gap-3">
             <VscAccount className="text-2xl" />
             Profile
           </span>
         </NavLink>
-        <NavLink className=" text-[20px]  px-6 py-5 font-semibold" to="/" exact>
+        <NavLink
+          className="text-[20px] px-6 py-5 font-semibold"
+          to="/listing/saved"
+          exact
+          activeClassName="text-blue-500 border-r-4 border-blue-500"
+        >
           <span className="flex items-center gap-3">
-            <VscAccount className="text-2xl" />
-            Profile
+            <MdBookmarkBorder className="text-2xl" />
+            Saved listings
           </span>
         </NavLink>
         <NavLink
-          className=" text-[20px]  px-6 py-5 font-semibold"
+          className="text-[20px] px-6 py-5 font-semibold"
           to="/create-listing"
           exact
+          activeClassName="text-blue-500 border-r-4 border-blue-500"
         >
           <span className="flex items-center gap-3">
             <IoCreateOutline className="text-2xl" />
@@ -49,43 +62,47 @@ export default function Sidebar() {
           </span>
         </NavLink>
         <NavLink
-          className=" text-[20px]  px-6 py-5 font-semibold"
-          to="/12"
+          className="text-[20px] px-6 py-5 font-semibold"
+          to="/my-listings"
           exact
+          activeClassName="text-blue-500 border-r-4 border-blue-500"
         >
           <span className="flex items-center gap-3">
-            <VscAccount className="text-2xl" />
-            Account
+            <IoHomeOutline className="text-2xl" />
+            My listings
           </span>
         </NavLink>
         <NavLink
-          className=" text-[20px]  px-6 py-5 font-semibold"
-          to="/123"
+          className="text-[20px] px-6 py-5 font-semibold"
+          to="/edit-username"
           exact
+          activeClassName="text-blue-500 border-r-4 border-blue-500"
         >
           <span className="flex items-center gap-3">
-            <VscAccount className="text-2xl" />
-            Account
+            <RxPencil1 className="text-2xl" />
+            Edit Username
           </span>
         </NavLink>
         <NavLink
-          className=" text-[20px]  px-6 py-5 font-semibold"
-          to="/1234"
+          className="text-[20px] px-6 py-5 font-semibold"
+          to="/edit-email"
           exact
+          activeClassName="text-blue-500 border-r-4 border-blue-500"
         >
           <span className="flex items-center gap-3">
-            <VscAccount className="text-2xl" />
-            Account
+            <RxPencil1 className="text-2xl" />
+            Edit Email
           </span>
         </NavLink>
         <NavLink
-          className=" text-[20px]  px-6 py-5 font-semibold"
-          to="/12345"
+          className="text-[20px] px-6 py-5 font-semibold"
+          to="/sing-out"
           exact
+          activeClassName="text-blue-500 border-r-4 border-blue-500"
         >
           <span className="flex items-center gap-3">
-            <VscAccount className="text-2xl" />
-            Account
+            <LuLogOut className="text-2xl" />
+            Sign Out
           </span>
         </NavLink>
       </nav>

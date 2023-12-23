@@ -5,16 +5,16 @@ const Tabs = () => {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
-      <div className="px-10">
-        <div className="flex items-center">
-          <div className="w-1/3">
-            <h1 className="font-semibold text-3xl">
+      <div className="md:px-10 px-6">
+        <div className="flex flex-col gap-6 md:gap-0 md:flex-row md:items-center items-start">
+          <div className="md:w-1/3 w-full">
+            <h1 className="  font-semibold text-3xl">
               Discover towns and cities
             </h1>
           </div>
-          <div className="w-1/3">
+          <div className="md:w-1/3 w-full">
             <ul
-              className="flex justify-center mb-0 list-none flex-wrap flex-row"
+              className="flex md:justify-center justify-start mb-0 list-none flex-wrap flex-row"
               role="tablist"
             >
               <li className="-mb-px flex text-center">
@@ -57,7 +57,7 @@ const Tabs = () => {
               </li>
             </ul>
           </div>
-          <div className="w-1/3 flex justify-end">
+          <div className="md:w-1/3 w-full md:flex hidden  justify-end">
             <a
               className="font-semibold text-lg underline underline-lightblue underline-offset-8 decoration-lightblue decoration-1 hover:decoration-2	"
               href="/search?searchTerm=Uk&type=sale"
@@ -68,8 +68,8 @@ const Tabs = () => {
         </div>
 
         <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-          <div className="flex py-14 border-b-[1px] border-bord">
-            <div className="w-1/3 flex items-start gap-4">
+          <div className="flex flex-col md:flex-row py-14 border-b-[1px] border-bord">
+            <div className="md:w-1/3 w-full pb-6 md:pb-0 flex items-start gap-4">
               <img
                 className="w-[80px]"
                 src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702061838/phone-booth-svgrepo-com_xfqkyv.svg"
@@ -80,7 +80,7 @@ const Tabs = () => {
                 <p className="text-lg">Live among the hustle and bustle</p>
               </div>
             </div>
-            <div className="w-1/3 ">
+            <div className="md:w-1/3 w-full ">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -109,7 +109,7 @@ const Tabs = () => {
                 </a>
               </div>
             </div>
-            <div className="w-1/3">
+            <div className="md:w-1/3 w-full">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -139,8 +139,8 @@ const Tabs = () => {
               </div>
             </div>
           </div>
-          <div className="flex py-14 border-b-[1px] border-bord">
-            <div className="w-1/3 flex items-start gap-4">
+          <div className="flex flex-col md:flex-row py-14 border-b-[1px] border-bord">
+            <div className="md:w-1/3 w-full flex pb-6 md:pb-0 items-start gap-4">
               <img
                 className="w-[80px]"
                 src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702061838/lighthouse-on-svgrepo-com_clhfdz.svg"
@@ -151,7 +151,7 @@ const Tabs = () => {
                 <p className="text-lg">Wake up to fresh air and sea views</p>
               </div>
             </div>
-            <div className="w-1/3 ">
+            <div className="md:w-1/3 w-full ">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -180,7 +180,7 @@ const Tabs = () => {
                 </a>
               </div>
             </div>
-            <div className="w-1/3">
+            <div className="md:w-1/3 w-full">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -210,8 +210,8 @@ const Tabs = () => {
               </div>
             </div>
           </div>
-          <div className="flex py-14 border-b-[1px] border-bord">
-            <div className="w-1/3 flex items-start gap-4">
+          <div className="flex flex-col md:flex-row py-14 border-b-[1px] border-bord">
+            <div className="md:w-1/3 w-full flex pb-6 md:pb-0 items-start gap-4">
               <img
                 className="w-[80px]"
                 src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702061838/sydney-opera-house-side-view-svgrepo-com_vrdull.svg"
@@ -224,7 +224,7 @@ const Tabs = () => {
                 <p className="text-lg">Enjoy living close to nature</p>
               </div>
             </div>
-            <div className="w-1/3 ">
+            <div className="md:w-1/3 w-full ">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -253,7 +253,7 @@ const Tabs = () => {
                 </a>
               </div>
             </div>
-            <div className="w-1/3">
+            <div className="md:w-1/3 w-full">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -283,8 +283,8 @@ const Tabs = () => {
               </div>
             </div>
           </div>
-          <div className="flex py-14 border-b-[1px] border-bord">
-            <div className="w-1/3 flex items-start gap-4">
+          <div className="flex flex-col md:flex-row py-14 md:border-b-[1px] border-0 border-bord">
+            <div className="md:w-1/3 w-full flex pb-6 md:pb-0 items-start gap-4">
               <img
                 className="w-[80px]"
                 src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702061838/big-ben-svgrepo-com_z7jmkf.svg"
@@ -295,7 +295,7 @@ const Tabs = () => {
                 <p className="text-lg">Move to a property hotspot</p>
               </div>
             </div>
-            <div className="w-1/3 ">
+            <div className="md:w-1/3 w-full ">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -324,7 +324,7 @@ const Tabs = () => {
                 </a>
               </div>
             </div>
-            <div className="w-1/3">
+            <div className="md:w-1/3 w-full">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -356,8 +356,8 @@ const Tabs = () => {
           </div>
         </div>
         <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-          <div className="flex py-14 border-b-[1px] border-bord">
-            <div className="w-1/3 flex items-start gap-4">
+          <div className="flex flex-col md:flex-row py-14 border-b-[1px] border-bord">
+            <div className="md:w-1/3 w-full flex items-start gap-4">
               <img
                 className="w-[80px]"
                 src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702061838/phone-booth-svgrepo-com_xfqkyv.svg"
@@ -368,7 +368,7 @@ const Tabs = () => {
                 <p className="text-lg">Live among the hustle and bustle</p>
               </div>
             </div>
-            <div className="w-1/3 ">
+            <div className="md:w-1/3 w-full ">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -397,7 +397,7 @@ const Tabs = () => {
                 </a>
               </div>
             </div>
-            <div className="w-1/3">
+            <div className="md:w-1/3 w-full">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -427,8 +427,8 @@ const Tabs = () => {
               </div>
             </div>
           </div>
-          <div className="flex py-14 border-b-[1px] border-bord">
-            <div className="w-1/3 flex items-start gap-4">
+          <div className="flex flex-col md:flex-row py-14 border-b-[1px] border-bord">
+            <div className="md:w-1/3 w-full flex items-start gap-4">
               <img
                 className="w-[80px]"
                 src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702061838/lighthouse-on-svgrepo-com_clhfdz.svg"
@@ -439,7 +439,7 @@ const Tabs = () => {
                 <p className="text-lg">Wake up to fresh air and sea views</p>
               </div>
             </div>
-            <div className="w-1/3 ">
+            <div className="md:w-1/3 w-full ">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -468,7 +468,7 @@ const Tabs = () => {
                 </a>
               </div>
             </div>
-            <div className="w-1/3">
+            <div className="md:w-1/3 w-full">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -498,8 +498,8 @@ const Tabs = () => {
               </div>
             </div>
           </div>
-          <div className="flex py-14 border-b-[1px] border-bord">
-            <div className="w-1/3 flex items-start gap-4">
+          <div className="flex flex-col md:flex-row py-14 border-b-[1px] border-bord">
+            <div className="md:w-1/3 w-full flex items-start gap-4">
               <img
                 className="w-[80px]"
                 src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702061838/sydney-opera-house-side-view-svgrepo-com_vrdull.svg"
@@ -512,7 +512,7 @@ const Tabs = () => {
                 <p className="text-lg">Enjoy living close to nature</p>
               </div>
             </div>
-            <div className="w-1/3 ">
+            <div className="md:w-1/3 w-full ">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -541,7 +541,7 @@ const Tabs = () => {
                 </a>
               </div>
             </div>
-            <div className="w-1/3">
+            <div className="md:w-1/3 w-full">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -571,8 +571,8 @@ const Tabs = () => {
               </div>
             </div>
           </div>
-          <div className="flex py-14 border-b-[1px] border-bord">
-            <div className="w-1/3 flex items-start gap-4">
+          <div className="flex flex-col md:flex-row py-14 border-b-[1px] border-bord">
+            <div className="md:w-1/3 w-full flex items-start gap-4">
               <img
                 className="w-[80px]"
                 src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702061838/big-ben-svgrepo-com_z7jmkf.svg"
@@ -583,7 +583,7 @@ const Tabs = () => {
                 <p className="text-lg">Move to a property hotspot</p>
               </div>
             </div>
-            <div className="w-1/3 ">
+            <div className="md:w-1/3 w-full ">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -612,7 +612,7 @@ const Tabs = () => {
                 </a>
               </div>
             </div>
-            <div className="w-1/3">
+            <div className="md:w-1/3 w-full">
               <div className="py-4 flex gap-2 items-center">
                 <FaArrowRightLong className="text-lighttext" />
                 <a
@@ -643,6 +643,14 @@ const Tabs = () => {
             </div>
           </div>
         </div>
+        <div className="md:w-1/3 w-full md:hidden flex  justify-center">
+            <a
+              className="font-semibold text-lg underline underline-lightblue underline-offset-8 decoration-lightblue decoration-1 hover:decoration-2	"
+              href="/search?searchTerm=Uk&type=sale"
+            >
+              Explore more towns & cities
+            </a>
+          </div>
       </div>
     </>
   );

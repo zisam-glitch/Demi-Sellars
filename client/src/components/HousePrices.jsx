@@ -17,30 +17,37 @@ export default function Header() {
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const searchTermFromUrl = urlParams.get("searchTerm");
-    
+
     if (searchTermFromUrl) {
       setSearchTerm(searchTermFromUrl);
     }
   }, [location.search]);
   return (
     <div>
-        <p className="pb-2 font-medium">Enter a location</p>
-        <form
-          onSubmit={handleSubmit}
-          className='flex justify-between gap-4'
-        >
-          <input
-            type='text'
-            required
-            placeholder='e.g Oxford or NW3'
-            className='w-full outline outline-1 focus:outline-lightblue rounded p-3'
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <button className="flex gap-2 items-center bg-lightblue py-2 px-6 outline outline-lightblue outline-1 rounded hover:shadow-lg hover:bg-litedarkblue">
-            <span><IoSearchOutline className='text-white' /></span><span className="text-white	">Search</span>
-          </button>
-        </form>
-        </div>
+      <p className="pb-2 font-medium">Enter a location</p>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col md:flex-row justify-between gap-4"
+      >
+        <input
+          type="text"
+          required
+          placeholder="e.g Oxford or NW3"
+          className="w-full outline outline-1 focus:outline-lightblue rounded p-3"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button className="flex gap-2  bg-lightblue py-3 justify-center px-6 outline outline-lightblue outline-1 rounded hover:shadow-lg hover:bg-litedarkblue">
+          <div className="flex items-center gap-3 ">
+              <div className="w-full flex gap-2 items-center ">
+                <span>
+                  <IoSearchOutline className="text-white text-xl" />
+                </span>
+                <span className="text-white	">Search</span>
+              </div>
+          </div>
+        </button>
+      </form>
+    </div>
   );
 }

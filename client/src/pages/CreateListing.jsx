@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import  Footer  from "../components/Footer";
 
 export default function CreateListing() {
   const { currentUser } = useSelector((state) => state.user);
@@ -165,7 +166,7 @@ export default function CreateListing() {
   return (
     <>
       <Header />
-      <main className="p-3 max-w-4xl mx-auto">
+      <main className="px-10">
         <h1 className="text-3xl font-semibold text-center my-7">
           Create a Listing
         </h1>
@@ -185,20 +186,7 @@ export default function CreateListing() {
               onChange={handleChange}
               value={formData.name}
             />
-            <div>
-              <div>
-                <CKEditor
-                  editor={ClassicEditor}
-                  data=""
-                  onChange={(event, editor) => {
-                    setFormData({
-                      ...formData,
-                      description: editor.getData(),
-                    });
-                  }}
-                />
-              </div>
-            </div>
+            
             <input
               type="text"
               placeholder="Name"
@@ -429,6 +417,21 @@ export default function CreateListing() {
             </div>
           </div>
           <div className="flex flex-col flex-1 gap-4">
+          <div>
+              <div>
+                <CKEditor
+                className="h-10"
+                  editor={ClassicEditor}
+                  data=""
+                  onChange={(event, editor) => {
+                    setFormData({
+                      ...formData,
+                      description: editor.getData(),
+                    });
+                  }}
+                />
+              </div>
+            </div>
             <p className="font-semibold">
               Images:
               <span className="font-normal text-gray-600 ml-2">
@@ -486,6 +489,7 @@ export default function CreateListing() {
           </div>
         </form>
       </main>
+   <Footer />
     </>
   );
 }

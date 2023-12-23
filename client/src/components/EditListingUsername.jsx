@@ -7,7 +7,6 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { app } from "../firebase";
-import { FaEdit } from "react-icons/fa";
 
 import {
   updateUserStart,
@@ -33,8 +32,7 @@ export default function Profile() {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
-  const [passwordMismatchError, setPasswordMismatchError] = useState(false);
-  const [editPassword, setEditPassword] = useState(false); // Added state for editPassword
+  const [passwordMismatchError, setPasswordMismatchError] = useState(false); // Added error state
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -78,7 +76,9 @@ export default function Profile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Check if the password and confirm password match
     if (formData.password !== formData.confirmPassword) {
+      // Handle password mismatch, display an error message
       setPasswordMismatchError(true);
       return;
     }
@@ -172,10 +172,6 @@ export default function Profile() {
     }
   };
 
-  const handleEditPassword = () => {
-    setEditPassword(!editPassword);
-  };
-
   return (
     <>
       <div className="p-20">
@@ -215,92 +211,36 @@ export default function Profile() {
               ""
             )}
           </p>
-          <div className="flex flex-col w-full">
-            <div className="flex justify-between pb-4">
-              <p className="text-lg">
-                <b>Username :{""}</b> {""}
-                {currentUser.username}
-              </p>
-              <Link to="/edit-username">
-                <p className="text-lg text-lightblue hover:underline decoration-lightblue">
-                  Eidt
-                </p>
-              </Link>
+          <div className="grid grid-cols-2 w-full gap-6">
+            <div className="flex flex-col gap-3">
+              <label className="font-medium text-base">Username</label>
+              <input
+                type="text"
+                placeholder="username"
+                defaultValue={currentUser.username}
+                id="username"
+                className="outline outline-1 rounded p-3"
+                onChange={handleChange}
+              />
             </div>
-            <div className="flex justify-between pb-4">
-              <p className="text-lg">
-                <b>Email :{""}</b> {""}
-                {currentUser.email}
-              </p>
-              <Link to="/edit-email">
-                <p className="text-lg text-lightblue hover:underline decoration-lightblue">
-                  Eidt
-                </p>
-              </Link>
-            </div>
-            <div className="flex justify-between pb-4">
-              <p className="text-lg">
-                <b>Paddword :{""}</b> xxxxxxxx {""}
-                
-              </p>
-              <Link>
-                <p
-                  onClick={handleEditPassword}
-                  className="text-lg text-lightblue hover:underline decoration-lightblue"
-                >
-                  {editPassword ? "Cancel " : "Edit "}
-                </p>
-              </Link>
+
+            <div className="flex flex-col gap-3">
+            <label className="text-transparent font-medium text-base">.</label>
+              <button
+                disabled={loading}
+                className="bg-lightblue text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
+              >
+                {loading ? "Loading..." : "Update"}
+              </button>
             </div>
           </div>
 
          
-          <div className="grid grid-cols-2 w-full gap-6">
-          
-            {editPassword && (
-              <>
-                <div className="flex flex-col gap-3">
-                  <label className="font-medium text-base">Password</label>
-                  <input
-                    type="password"
-                    placeholder="password"
-                    onChange={handleChange}
-                    id="password"
-                    className="outline outline-1 rounded p-3"
-                  />
-                </div>
-                <div className="flex flex-col gap-3">
-                  <label className="font-medium text-base">
-                    Confirm Password
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="confirm password"
-                    onChange={handleConfirmPasswordChange}
-                    id="confirmPassword"
-                    className="outline outline-1 rounded p-3"
-                  />
-                </div>
-                <div className="flex flex-col gap-3">
-                  <button
-                    disabled={loading}
-                    className="bg-lightblue text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
-                  >
-                    {loading ? "Loading..." : "Update"}
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
-
-          {passwordMismatchError && (
-            <p className="text-red-700">Passwords do not match.</p>
-          )}
         </form>
 
         <p className="text-red-700 mt-5">{error ? error : ""}</p>
         <p className="text-green-700 mt-5">
-          {updateSuccess ? "User is updated successfully!" : ""}
+          {updateSuccess ? "Username is updated successfully!" : ""}
         </p>
       </div>
     </>

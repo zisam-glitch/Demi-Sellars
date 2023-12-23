@@ -6,13 +6,12 @@ import SwiperCore from "swiper";
 import "swiper/css/bundle";
 import ListingItem from "../components/ListingItem";
 import BlogSlider from "../components/BlogSlider";
-import TownsAnsCities from "../components/TownsAndCities"
+import TownsAnsCities from "../components/TownsAndCities";
 import Search from "../components/Search";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import { useSelector } from "react-redux";
-
 
 export default function Home() {
   const { currentUser } = useSelector((state) => state.user);
@@ -59,16 +58,18 @@ export default function Home() {
       <Header />
       <div>
         {/* top */}
-        <div className="bg-center bg-cover bg-no-repeat	bg-[url(https://images.pexels.com/photos/813362/pexels-photo-813362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)] ">
-          <div className="bg-overley  flex flex-col gap-4 p-28 px-3 max-w-full mx-auto">
-            <h1 className="text-white font-bold text-3xl lg:text-4xl text-center">
-              Demi Sellars: Leading UK Estate Agent
-            </h1>
-            <div className="text-white font-semibold text-center text-xs sm:text-lg">
-              Find homes to buy or rent and check house prices
-            </div>
+        <div className="md:bg-center bg-top bg-contain md:bg-cover bg-no-repeat	bg-[url(https://images.pexels.com/photos/813362/pexels-photo-813362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)] ">
+          <div className="bg-overley  flex flex-col gap-4 md:py-28 md:px-3 pt-48 p-0 max-w-full mx-auto">
+            <div className="bg-white md:bg-transparent rounded-xl shadow-lg flex flex-col gap-4 ">
+              <h1 className="md:text-white text-black font-semibold pt-6 px-6 md:p-0 md:font-bold text-3xl md:text-4xl md:text-center">
+                Demi Sellars: Leading UK Estate Agent
+              </h1>
+              <div className="md:text-white text-black font-normal md:font-semibold text-start md:text-center px-6 md:p-0 text-lg md:text-lg">
+                Find homes to buy or rent and check house prices
+              </div>
 
-            <Search />
+              <Search />
+            </div>
           </div>
         </div>
         {currentUser ? (
@@ -100,12 +101,12 @@ export default function Home() {
           </div>
         )}
 
-        <div className="flex items-center gap-2 px-10 py-20">
-          <div className="w-1/2">
+        <div className="flex flex-col md:flex-row items-center md:gap-2 gap-6 md:px-10 px-6 py-20">
+          <div className="md:w-1/2 w-full">
             <h1 className="font-semibold text-3xl pb-4">
               Welcome to Demi Sellars Realty
             </h1>
-            <p className="text-lg text-black pb-5 pr-8">
+            <p className="text-lg text-black pb-5 pr-0 md:pr-8">
               Demi Sellars, where your property dreams become reality. As the
               UK's leading estate agent, Demi Sellars has redefined property
               buying, selling, and renting with an innovative, client-focused
@@ -116,7 +117,7 @@ export default function Home() {
               <span className="font-medium text-lg">Learm more about us</span>
             </button>
           </div>
-          <div className="w-1/2 ">
+          <div className="md:w-1/2 w-full ">
             <img
               className="rounded-xl"
               src="https://res.cloudinary.com/db1i46uiv/image/upload/v1701814032/pexels-andrea-piacquadio-3768146_bzd1kf.jpg"
@@ -125,8 +126,8 @@ export default function Home() {
           </div>
         </div>
         <BlogSlider />
-        <div className="flex items-center gap-2 mx-10 bg-yellow mt-20 rounded-xl">
-          <div className="w-1/2">
+        <div className="flex flex-col md:flex-row items-center gap-2 md:mx-10 mx-6 bg-yellow mt-20 rounded-xl">
+          <div className="md:w-1/2 w-full">
             <div className="p-6">
               <h1 className="font-semibold text-3xl pb-4">
                 Thinking of selling?
@@ -143,15 +144,15 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="w-1/2 ">
+          <div className="md:w-1/2 w-full ">
             <img
               src="https://res.cloudinary.com/db1i46uiv/image/upload/v1701900629/Asset_1-svg_upk5bt.svg"
               alt=""
             />
           </div>
         </div>
-        <div className="flex items-center gap-2 px-10 py-20">
-          <div className="w-1/2">
+        <div className="flex flex-col md:flex-row items-center md:gap-2 gap-6 md:px-10 px-6 py-20">
+          <div className="md:w-1/2 w-full">
             <h1 className="font-semibold text-3xl pb-4">
               Explore our area guides
             </h1>
@@ -165,7 +166,7 @@ export default function Home() {
               <span className="font-medium text-lg">Explore area guides</span>
             </button>
           </div>
-          <div className="w-1/2 ">
+          <div className="md:w-1/2 w-full ">
             <img
               className="rounded-xl"
               src="https://images.ctfassets.net/02vwvgr6spsr/4TTxkncNLLK14frkqvDzXL/c380b1fe8ebac142ef0c7128c3ec3c66/Activity-bicycle-women.png?q=50&w=768&fm=avif"
@@ -174,8 +175,8 @@ export default function Home() {
           </div>
         </div>
         <TownsAnsCities />
-        
-        <Footer  />
+
+        <Footer />
         {/* swiper */}
 
         {/* <Swiper navigation>
@@ -194,7 +195,6 @@ export default function Home() {
               </SwiperSlide>
             ))}
         </Swiper> */}
-
 
         {/* <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10">
           {offerListings && offerListings.length > 0 && (

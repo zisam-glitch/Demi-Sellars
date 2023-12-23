@@ -4,10 +4,10 @@ export default function Footer() {
   return (
     <>
       <div className="bg-footer  mt-20">
-        <div className="px-10 py-12  border-bord">
-          <div className="flex items-start">
-            <div className="w-1/4">
-              <ul className="flex gap-6 flex-col">
+        <div className="md:px-10 px-6 py-12  border-bord">
+          <div className="flex md:flex-row flex-col items-start">
+            <div className="md:w-1/4 w-full">
+              <ul className="flex gap-6 flex-col pb-10 border-b-2  md:border-0">
                 <li className="text-lg font-semibold hover:underline underline-lightblue underline-offset-[6px] decoration-lightblue decoration-2">
                   <a href="">For sale</a>
                 </li>
@@ -28,8 +28,8 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="w-1/4">
-              <ul className="flex gap-6 flex-col">
+            <div className="md:w-1/4 w-full">
+              <ul className="flex gap-6 flex-col py-10 border-b-2  md:border-0">
                 <li className="text-lg font-semibold hover:underline underline-lightblue underline-offset-[6px] decoration-lightblue decoration-2">
                   <a href="">To rent</a>
                 </li>
@@ -41,8 +41,8 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="w-1/4">
-              <ul className="flex gap-6 flex-col">
+            <div className="md:w-1/4 w-full">
+              <ul className="flex gap-6 flex-col py-10 border-b-2 md:border-0">
                 <li className="text-lg font-semibold hover:underline underline-lightblue underline-offset-[6px] decoration-lightblue decoration-2">
                   <a href="">Research</a>
                 </li>
@@ -57,7 +57,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="w-1/4">
+            <div className="md:w-1/4 w-full  pt-10 ">
               <ul className="flex gap-6 flex-col">
                 <li className="text-lg font-semibold hover:underline underline-lightblue underline-offset-[6px] decoration-lightblue decoration-2">
                   <a href="">DemiSellars for business </a>
@@ -76,10 +76,10 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-b-[1px] mx-10"></div>
-        <div className="px-10">
-          <div className="flex items-center justify-between py-12">
-            <div className="flex">
-              <ul className="flex gap-6">
+        <div className="md:px-10 px-6">
+          <div className="flex md:flex-row flex-col border-b-2 md:border-0 md:items-center items-start md:justify-between py-12">
+            <div className="flex ">
+              <ul className="flex gap-6 md:flex-row  flex-col">
                 <li className="text-lg font-semibold hover:underline underline-lightblue underline-offset-[6px] decoration-lightblue decoration-2">
                   <a href="">Privacy</a>
                 </li>
@@ -103,7 +103,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="flex gap-6">
+            <div className="gap-6 hidden md:flex">
               <img
                 src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702066385/svgexport-12_meqsnc.svg"
                 alt=""
@@ -126,9 +126,9 @@ export default function Footer() {
               />
             </div>
           </div>
-          <div className="flex items-center justify-between pb-12">
+          <div className="flex md:items-center items-start pt-12 md:pt-0 justify-between pb-12">
             <div className="flex">
-              <ul className="flex gap-6">
+              <ul className="flex gap-6 flex-col md:flex-row">
                 <li className="text-lg font-semibold hover:underline underline-lightblue underline-offset-[6px] decoration-lightblue decoration-2">
                   <a href="">Terms</a>
                 </li>
@@ -146,12 +146,39 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="flex gap-6">
+            <div className="md:flex hidden  gap-6">
               <p className="text-lg">
                 © {(new Date().getFullYear())} DemiSellars Limited. All rights reserved.
               </p>
             </div>
           </div>
+          <div className="gap-6 pb-12 md:hidden flex">
+              <img
+                src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702066385/svgexport-12_meqsnc.svg"
+                alt=""
+              />
+              <img
+                src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702066275/svgexport-13_mnsjvl.svg"
+                alt=""
+              />
+              <img
+                src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702066302/svgexport-15_llonqj.svg"
+                alt=""
+              />
+              <img
+                src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702066316/svgexport-16_oo42ot.svg"
+                alt=""
+              />
+              <img
+                src="https://res.cloudinary.com/db1i46uiv/image/upload/v1702066385/svgexport-17_kgx4oz.svg"
+                alt=""
+              />
+            </div>
+            <div className="flex md:hidden pb-12  gap-6">
+              <p className="text-lg">
+                © {(new Date().getFullYear())} DemiSellars Limited. All rights reserved.
+              </p>
+            </div>
           <div className="pb-12 text-sm">
             <p>
               Sold house prices provided by Land Registry/Registers of Scotland.

@@ -8,7 +8,7 @@ const Tabs = () => {
   return (
     <>
       <div className="flex flex-wrap">
-        <div className="w-3/5	mx-auto bg-white rounded-xl	">
+        <div className="md:w-3/5	mx-auto w-full bg-white rounded-xl	">
           <ul
             className="flex justify-center mb-0 list-none flex-wrap flex-row"
             role="tablist"
@@ -16,7 +16,7 @@ const Tabs = () => {
             <li className="-mb-px flex text-center">
               <a
                 className={
-                  "text-sm  px-5 py-3 block leading-normal border-lightblue hover:bg-slate-100 hover:border-b-[2px]" +
+                  "  px-5 py-3 block leading-normal border-lightblue hover:bg-slate-100 hover:border-b-[2px]" +
                   (openTab === 1
                     ? "text-black font-semibold border-b-[2px]"
                     : " text-slate-700 font-medium")
@@ -32,10 +32,10 @@ const Tabs = () => {
                 For sale
               </a>
             </li>
-            <li className="-mb-px   flex text-center">
+            <li className="-mb-px  flex text-center">
               <a
                 className={
-                  "text-sm  px-5 py-3 block leading-normal border-lightblue hover:bg-slate-100 hover:border-b-[2px]" +
+                  "  px-5 py-3 block leading-normal border-lightblue hover:bg-slate-100 hover:border-b-[2px]" +
                   (openTab === 2
                     ? "text-black font-semibold border-b-[2px]"
                     : " text-slate-700 font-medium")
@@ -54,7 +54,7 @@ const Tabs = () => {
             <li className="-mb-px  flex  text-center">
               <a
                 className={
-                  "text-sm  px-5 py-3 block leading-normal border-lightblue hover:bg-slate-100 hover:border-b-[2px]" +
+                  "  px-5 py-3 block leading-normal border-lightblue hover:bg-slate-100 hover:border-b-[2px]" +
                   (openTab === 3
                     ? "text-black font-semibold border-b-[2px]"
                     : " text-slate-700 font-medium")
@@ -73,7 +73,7 @@ const Tabs = () => {
           </ul>
           <hr />
           <div className="relative flex flex-col min-w-0 break-words w-full mb-2 ">
-            <div className="px-5 py-5 flex-auto">
+            <div className="px-6 md:px-5 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                   <ForSale />
