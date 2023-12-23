@@ -41,7 +41,7 @@ export default function SignUp() {
     }
   };
   return (
-    <div className="w-full h-screen p-20 grid items-center">
+    <div className="w-full h-screen md:p-20 px-6 py-10 grid items-center">
       <Link to="/">
         <h1 className="font-bold text-2xl  flex flex-wrap">
           <span className="text-darkblue">Home</span>

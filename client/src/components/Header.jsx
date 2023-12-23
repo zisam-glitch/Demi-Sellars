@@ -58,7 +58,7 @@ export default function Header() {
         <header className="md:hidden block shadow">
           <div className="flex justify-between items-center max-w-full mx-auto py-5 md:px-10 px-6">
             <Link to="/">
-              <h1 className="font-bold text-xl md:text-2xl flex flex-wrap">
+              <h1 className="font-bold text-2xl md:text-2xl flex flex-wrap">
                 <span className="text-darkblue">Demi</span>
                 <span className="text-lightblue">Sellars</span>
               </h1>

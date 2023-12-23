@@ -29,8 +29,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />  {/* done */}
-        <Route path='/sign-in' element={<SignIn />} />
-        <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/sign-in' element={<SignIn />} />{/* done */}
+        <Route path='/sign-up' element={<SignUp />} />{/* done */}
         <Route path='/our-services' element={<Services />} />
         <Route path='/my-account' element={<MyAccount />} />
         <Route path='/mortgage-calculator' element={<Mortgage />} />
@@ -44,7 +44,7 @@ export default function App() {
           <Route path='/my-account' element={<MyAccount />} />
           <Route path='/my-listings' element={<MyListing />} />
           <Route path='/update-listings' element={<UpdateListingS />} />
-          <Route path='/sing-out' element={<SingOut />} />
+          <Route path='/sign-out' element={<SingOut />} />
           <Route path='/edit-email' element={<EditEmail />} />
           <Route path='/edit-username' element={<EditUserName />} />
           <Route path='/create-listing' element={<CreateListing />} />
