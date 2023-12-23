@@ -75,8 +75,8 @@ export default function Home() {
         {currentUser ? (
           <></>
         ) : (
-          <div className="flex items-center gap-2 mx-10 bg-purple mt-20 rounded-xl">
-            <div className="w-1/2">
+          <div className="flex md:flex-row flex-col items-center gap-6 md:gap-2 mx-10 bg-purple mt-20 rounded-xl">
+            <div className="md:w-1/2 w-full">
               <div className="p-6">
                 <h1 className="font-semibold text-3xl pb-4">
                   Sign in to save your faves
@@ -92,7 +92,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="w-1/2 ">
+            <div className="md:w-1/2 w-full ">
               <img
                 src="https://res.cloudinary.com/db1i46uiv/image/upload/v1701812620/Asset_3-svg_p5zdjb.svg"
                 alt=""

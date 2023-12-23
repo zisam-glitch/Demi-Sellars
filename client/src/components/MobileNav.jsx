@@ -7,6 +7,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { RxPencil1 } from "react-icons/rx";
 import { LuLogOut } from "react-icons/lu";
 import MobileNav from "./MobileNav";
+import { FaBars } from "react-icons/fa6";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
@@ -48,14 +49,7 @@ export default function Header() {
               >
                 <li className="inline font-medium text-black py-3 ">
                   <div className="flex flex-row gap-3 items-center">
-                    <span>Account</span>
-                    <span>
-                      <img
-                        className="w-8 h-8 rounded-full"
-                        src={currentUser.avatar}
-                        alt=""
-                      />
-                    </span>
+                    <FaBars className="text-xl text-darkblue" />
                   </div>
                 </li>
               </Button>
@@ -66,8 +60,81 @@ export default function Header() {
                 open={open}
                 className="w-20"
               >
-                <div className="px-8 py-4  bg-purple">
-               
+                <div className="px-8 bg-purple h-full py-4">
+                  <div className="bg-purple ">
+                    <ul className="flex flex-col text-2xl gap-6">
+                      <NavLink
+                        to="/search?type=sale"
+                        exact
+                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                      >
+                        For Sale
+                      </NavLink>
+                      <NavLink
+                        to="/search?type=rent"
+                        exact
+                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                      >
+                        To Rent
+                      </NavLink>
+                      <NavLink
+                        to="/search"
+                        exact
+                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                      >
+                        House prices
+                      </NavLink>
+                      <NavLink
+                        to="/about-us"
+                        exact
+                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                      >
+                        About Us
+                      </NavLink>
+                      <NavLink
+                        to="/our-services"
+                        exact
+                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                      >
+                        Our Services
+                      </NavLink>
+                      <NavLink
+                        to="/contact-us"
+                        exact
+                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                      >
+                        Contact Us
+                      </NavLink>
+                      {currentUser ? (
+                        <NavLink
+                          to="/my-account"
+                          exact
+                          className="font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                        >
+                          Account
+                        </NavLink>
+                      ) : (
+                        <NavLink
+                          to="/sign-in"
+                          exact
+                          className="font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                        >
+                          Sing In
+                        </NavLink>
+                      )}
+                      {currentUser && currentUser.role === "admin" ? (
+                        <NavLink
+                          to="/listing/requests"
+                          exact
+                          className="font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                        >
+                          Manage Listings
+                        </NavLink>
+                      ) : (
+                        ""
+                      )}
+                    </ul>
+                  </div>
                 </div>
               </Drawer>
             </li>
