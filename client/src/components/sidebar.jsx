@@ -13,7 +13,7 @@ export default function Sidebar() {
   const { currentUser } = useSelector((state) => state.user);
 
   return (
-    <div className="w-[20%] bg-footer flex flex-col rounded-xl h-[calc(100vh-252px)] ">
+    <div className="w-[20%] bg-footer hidden md:flex flex-col rounded-xl h-[calc(100vh-252px)] ">
       <div className="rounded-xl h-[30%] mb-6 shadow-xl bg-white flex flex-col gap-4 p-14 justify-center items-center">
         <img
           className="w-20 h-20 rounded-full"

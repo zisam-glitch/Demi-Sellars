@@ -178,7 +178,7 @@ export default function Profile() {
 
   return (
     <>
-      <div className="p-20">
+      <div className="md:p-20 p-6">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-6 items-start"

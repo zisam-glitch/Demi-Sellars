@@ -213,12 +213,17 @@ select.sort:focus {
   background-color: #f7f6f5;
   border-left: 4px solid #0062d1;
 }
-
 .scrolly {
   overflow-y: scroll;
-  height: calc(100vh - 252px);
+  height: calc(100vh - 112px);
 }
 
+@media (min-width: 768px){
+  .scrolly {
+    overflow-y: scroll;
+    height: calc(100vh - 252px);
+  }
+}
 /* width */
 ::-webkit-scrollbar {
   width: 0px;
@@ -252,4 +257,7 @@ input{
 .grp{
   display: block;
   width: 100%;
+}
+:where(.css-p7e5j5).ant-drawer .ant-drawer-body{
+  padding: 0!important;
 }

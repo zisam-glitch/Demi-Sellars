@@ -40,21 +40,7 @@ export default function Header() {
 
   return (
     <>
-      {currentUser ? (
-        <header className="md:hidden block shadow">
-          <div className="flex justify-between items-center max-w-full mx-auto py-5 md:px-10 px-6">
-            <Link to="/">
-              <h1 className="font-bold text-xl md:text-2xl flex flex-wrap">
-                <span className="text-darkblue">Demi</span>
-                <span className="text-lightblue">Sellars</span>
-              </h1>
-            </Link>
-            <div>
-              <MobileNav />
-            </div>
-          </div>
-        </header>
-      ) : (
+      
         <header className="md:hidden block shadow">
           <div className="flex justify-between items-center max-w-full mx-auto py-5 md:px-10 px-6">
             <Link to="/">
@@ -68,7 +54,7 @@ export default function Header() {
             </div>
           </div>
         </header>
-      )}
+     
       <header className="hidden md:block shadow">
         <div className="flex justify-between items-center max-w-full mx-auto py-5 md:px-10 px-6">
           <Link to="/">

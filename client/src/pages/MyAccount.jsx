@@ -8,10 +8,10 @@ const Tabs = () => {
   return (
     <>
       <Header />
-      <div className="px-20 py-20  bg-footer">
-        <div className="flex gap-[5%]">
+      <div className="md:px-20 px-6 md:py-20 py-6  bg-footer">
+        <div className="md:flex block gap-[5%]">
           <Sidebar />
-          <div className=" shadow-lg rounded-xl bg-white scrolly w-[75%]">
+          <div className=" shadow-lg rounded-xl bg-white scrolly w-full md:w-[75%]">
             <Account />
           </div>
         </div>
