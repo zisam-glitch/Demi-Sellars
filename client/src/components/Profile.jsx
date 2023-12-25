@@ -156,99 +156,103 @@ export default function Profile() {
       console.log(error.message);
     }
   };
-
-  useEffect(() => {
-    // Call handleShowListings when the component mounts
-    handleShowListings();
-
-    // Check if there's an uploaded file and initiate file upload
-    if (file) {
-      handleFileUpload(file);
-    }
-  }, [file]);
-
-  console.log("Loading:", loading);
-
-  if (loading) {
-    // Render a loading spinner or message while data is being fetched
-    return <div>Loading...</div>;
-  }
-
   return (
     <>
-      <div className="scroll">
-        {showListingsError ? (
-          <p className="text-red-700 mt-5">Error showing listings </p>
-        ) : (
-          ""
-        )}
+      {" "}
+      <div className="pt-8 ">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <input
+            onChange={(e) => setFile(e.target.files[0])}
+            type="file"
+            ref={fileRef}
+            hidden
+            accept="image/*"
+          />
 
-        {userListings && userListings.length > 0 ? (
-          <div className="flex flex-col gap-4">
-            {userListings.map((listing) => (
-              <div
-                key={listing._id}
-                className=" shadow-sm rounded-lg px-5 py-4 flex justify-between items-center gap-8"
-              >
-                <Link to={`/listing/${listing._id}`}>
-                  <img
-                    src={listing.imageUrls[0]}
-                    alt="listing cover"
-                    className="h-24 w-40 object-contain"
-                  />
-                </Link>
-                <Link
-                  className="text-slate-700 font-semibold   truncate flex-1"
-                  to={`/listing/${listing._id}`}
-                >
-                  <div className="flex gap-2">
-                    <p className="text-lg font-semibold pb-2 hover:underline capitalize">
-                      {listing.address}
-                    </p>
-                    <div>
-                      {!listing.approved ? (
-                        <p className="text-lg font-semibold text-lighttext ">
-                          (Pending)
-                        </p>
-                      ) : (
-                        <p className="text-lg font-semibold text-lightblue">
-                          (Approved)
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                  <p className="pb-2 capitalize">{listing.name}</p>
-                  <p className="text-base pr-12 mb-2 text-gray-600 line-clamp-1">
-                    <div
-                      dangerouslySetInnerHTML={{ __html: listing.description }}
-                    />
-                  </p>
-                </Link>
-
-                <div className="flex flex-col item-center">
-                  <Link to={`/update-listing/${listing._id}`}>
-                    <button className="text-lightblue uppercase pb-2">
-                      Edit
-                    </button>
-                  </Link>
-                  <button
-                    onClick={() => handleListingDelete(listing._id)}
-                    className="text-red-700 uppercase"
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-            ))}
+          <div
+            className="flex items-center px-4 py-2 border-2"
+            onClick={() => fileRef.current.click()}
+          >
+            <div className="w-[20%]">
+              <img
+                src={formData.avatar || currentUser.avatar}
+                alt="profile"
+                className=" h-20 w-[20 object-cover cursor-pointer"
+              />
+            </div>
+            <div className="w-[80%] flex flex-col gap-1 items-center justify-center">
+              <p className="border-[3px] cursor-pointer py-1 px-4 hover:border-lightblue rounded-lg">
+                Upload new image
+              </p>
+            </div>
           </div>
-        ) : (
-          <p className="text-lg justify-center items-center font-semibold flex flex-col">
-            You have no listings.{" "}
-            <Link className="text-lightblue" to="/create-listing">
-              Create one now!
-            </Link>
-          </p>
-        )}
+
+          {fileUploadError ? (
+            <p className="text-sm self-center">
+              <span className="text-red-700">
+                Error Image upload (image must be less than 2 mb)
+              </span>
+            </p>
+          ) : filePerc > 0 && filePerc < 100 ? (
+            <p className="text-sm self-center">
+              <span className="text-slate-700">
+                {" "}
+                {`Uploading ${filePerc}%`}{" "}
+              </span>
+            </p>
+          ) : filePerc === 100 ? (
+            <p className="text-sm self-center">
+              <span className="text-green-700">
+                Image successfully uploaded!
+              </span>{" "}
+            </p>
+          ) : (
+            ""
+          )}
+          <div className="flex flex-col gap-1">
+            <label className="font-medium text-sm">Username</label>
+            <input
+              type="text"
+              placeholder="username"
+              defaultValue={currentUser.username}
+              id="username"
+              className="outline outline-1 rounded p-3"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex flex-col gap-1">
+            <label className="font-medium text-sm">Email</label>
+            <input
+              type="email"
+              placeholder="email"
+              id="email"
+              defaultValue={currentUser.email}
+              className="outline outline-1 rounded p-3"
+              onChange={handleChange}
+            />
+          </div>
+          {/* <input
+            type="password"
+            placeholder="password"
+            onChange={handleChange}
+            id="password"
+            className="border p-3 rounded-lg"
+          /> */}
+          <div className="flex justify-end">
+          
+            <button
+              disabled={loading}
+              className="bg-lightblue w-1/2  text-white rounded-lg p-3  hover:opacity-95 disabled:opacity-80"
+            >
+              {loading ? "Loading..." : "Save Changes"}
+            </button>
+          </div>
+        </form>
+
+        <p className="text-red-700 mt-5">{error ? error : ""}</p>
+        <p className="text-green-700 mt-5">
+          {updateSuccess ? "User is updated successfully!" : ""}
+        </p>
       </div>
     </>
   );

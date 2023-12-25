@@ -16,7 +16,7 @@ import ContactUs from './pages/ContactUs';
 import Mortgage from './pages/Mortgage';
 import MyAccount from './pages/MyAccount'
 import SingOut from './pages/SingOut'
-import EditEmail from './pages/EditEmail'
+import Settings from './pages/Settings'
 import EditUserName from './pages/EditUserName'
 import UpdateListingS from './pages/UpdateListings'
 
@@ -32,7 +32,6 @@ export default function App() {
         <Route path='/sign-in' element={<SignIn />} />{/* done */}
         <Route path='/sign-up' element={<SignUp />} />{/* done */}
         <Route path='/our-services' element={<Services />} />{/* done */}
-        <Route path='/my-account' element={<MyAccount />} />
         <Route path='/mortgage-calculator' element={<Mortgage />} />
         <Route path='/about-us' element={<About />} />
         <Route path='/contact-us' element={<ContactUs />} />
@@ -45,7 +44,7 @@ export default function App() {
           <Route path='/my-listings' element={<MyListing />} />
           <Route path='/update-listings' element={<UpdateListingS />} />
           <Route path='/sign-out' element={<SingOut />} />
-          <Route path='/edit-email' element={<EditEmail />} />
+          <Route path='/settings' element={<Settings />} />
           <Route path='/edit-username' element={<EditUserName />} />
           <Route path='/create-listing' element={<CreateListing />} />
           <Route

@@ -116,7 +116,7 @@ export default function Header() {
                     className="text-black shadow-none text-lg p-0 outline-none border-[0] font-light"
                     onClick={showDrawer}
                   >
-                    <li className="font-medium text-black py-3">
+                    <li className="font-medium text-black">
                       <div className="flex flex-row gap-3 items-center">
                         <span>Account</span>
                         <span>
@@ -138,7 +138,7 @@ export default function Header() {
                   >
                     <div className="px-8 py-4 bg-purple">
                       <ul>
-                        <Link to="/my-account">
+                        <Link to="/settings">
                           <li className="text-2xl cursor-pointer pb-5 font-semibold decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 ">
                             Account
                           </li>
@@ -216,7 +216,7 @@ export default function Header() {
           ) : (
             <div>
                  <Link to="/sign-in">
-              <button className="flex gap-2  bg-lightblue py-2 justify-center px-6 outline outline-lightblue outline-1 rounded hover:shadow-lg hover:bg-litedarkblue">
+              <button className="flex gap-2  bg-lightblue justify-center px-6 outline outline-lightblue outline-1 rounded hover:shadow-lg hover:bg-litedarkblue">
                 <div className="flex items-center gap-3 ">
                   <span className="text-white	">Sing in</span>
                 </div>

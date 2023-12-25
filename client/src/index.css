@@ -188,8 +188,9 @@ select.sort:focus {
   border-bottom: 0;
 }
 .ant-drawer-body {
-  padding: 0px;
+  padding: 0px !important;
 }
+
 .ant-drawer-header-title {
   justify-content: end;
   padding: 10px 0;
@@ -206,23 +207,34 @@ select.sort:focus {
 }
 
 #sidebar a.active {
-  background-color: #f7f6f5;
-  border-left: 4px solid #0062d1;
+  background-color: #0062d1;
+  border-radius: 3px;
+  color: white;
+}
+#sidebar a.active svg {
+  color: white;
+}
+#sidebar a.active:hover  {
+  color: white;
 }
 #sidebar a:hover {
-  background-color: #f7f6f5;
-  border-left: 4px solid #0062d1;
+  color: #00008B;
 }
 .scrolly {
   overflow-y: scroll;
   height: calc(100vh - 112px);
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .scrolly {
     overflow-y: scroll;
     height: calc(100vh - 252px);
   }
+}
+.scroll{
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: calc(100vh - 214px);
 }
 /* width */
 ::-webkit-scrollbar {
@@ -243,21 +255,33 @@ select.sort:focus {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-input:focus{
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+input:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+    var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+    calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow, 0 0 #0000);
 }
 
-input{
+input {
   --tw-ring-offset-width: 2px;
   outline-color: #00000036 !important;
 }
+.noout{
+  --tw-ring-offset-width: 0px!important;
+  outline-color: #00000000 !important;
+}
 
-.grp{
+.noout:focus {
+  --tw-ring-offset-shadow: #00000000 ;
+  --tw-ring-shadow: #00000000 ;
+  box-shadow: #00000000 ;
+}
+.grp {
   display: block;
   width: 100%;
 }
-:where(.css-p7e5j5).ant-drawer .ant-drawer-body{
-  padding: 0!important;
+:where(.css-p7e5j5).ant-drawer .ant-drawer-body {
+  padding: 0 !important;
 }

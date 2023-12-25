@@ -3,10 +3,8 @@ import Sidebar from "../components/side-Bar";
 import { IoSearchOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import SingOut from "../components/SingOut"
-import DelateAccount from "../components/DelateAccount"
-
-
+import Profile from "../components/Profile";
+import ProfilePassword from "../components/ProfilePassword";
 const Tabs = () => {
   const [openTab, setOpenTab] = React.useState(1);
   const [searchTerm, setSearchTerm] = useState("");
@@ -78,7 +76,7 @@ const Tabs = () => {
                     href="#link1"
                     role="tablist"
                   >
-                    Sing out
+                    Profile
                   </a>
                 </li>
                 <li className="-mb-px  flex text-center">
@@ -97,10 +95,28 @@ const Tabs = () => {
                     href="#link2"
                     role="tablist"
                   >
-                   Delete account
+                    Email preferences
                   </a>
                 </li>
-               
+                <li className="-mb-px  flex  text-center">
+                  <a
+                    className={
+                      "  px-3 py-3 block leading-normal border-lightblue :bg-slate-100 :border-b-[2px]" +
+                      (openTab === 3
+                        ? "text-black font-semibold border-b-[2px]"
+                        : " text-slate-700 font-medium")
+                    }
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setOpenTab(3);
+                    }}
+                    data-toggle="tab"
+                    href="#link3"
+                    role="tablist"
+                  >
+                    Interrogations
+                  </a>
+                </li>
               </ul>
               <hr />
               <div className="relative flex flex-col min-w-0 break-words w-full mb-2 ">
@@ -110,19 +126,28 @@ const Tabs = () => {
                       className={openTab === 1 ? "block" : "hidden"}
                       id="link1"
                     >
-                       <div className="py-5 flex gap-10 ">
-                        <div className="w-full bg-white border-2 rounded-xl">
+                      <div className="py-5 flex gap-10 ">
+                        <div className="w-1/2 bg-white border-2 rounded-xl">
                           <div className="p-5">
                             <h1 className="text-xl pb-1 font-semibold">
-                            Sing Out
+                              Profile Settings
                             </h1>
-                            <div className="flex gap-2">
                             <p className="text-base opacity-80 ">
-                            Your Account informations will be removed until you sign in again
+                              Those are your personal details, they arn't
+                              visible to public
                             </p>
-                            <SingOut />
-                            </div>
-                           
+                            <Profile />
+                          </div>
+                        </div>
+                        <div className="w-1/2 bg-white border-2 rounded-xl">
+                          <div className="p-5">
+                            <h1 className="text-xl pb-1 font-semibold">
+                              Update Password
+                            </h1>
+                            <p className="text-base opacity-80 ">
+                              Enter a new password tom make update
+                            </p>
+                            <ProfilePassword />
                           </div>
                         </div>
                       </div>
@@ -135,19 +160,32 @@ const Tabs = () => {
                         <div className="w-full bg-white border-2 rounded-xl">
                           <div className="p-5">
                             <h1 className="text-xl pb-1 font-semibold">
-                            Delete Account
+                            Email preferences
                             </h1>
-                            <div className="flex gap-2">
                             <p className="text-base opacity-80 ">
-                              The User will purmanently delated
+                              There is nothing available at this moment
                             </p>
-                            <DelateAccount />
-                            </div>
+                            {/* <Profile /> */}
                           </div>
                         </div>
                       </div>
                     </div>
-                    
+                    <div
+                      className={openTab === 3 ? "block" : "hidden"}
+                      id="link3"
+                    > <div className="py-5 flex gap-10 ">
+                    <div className="w-full bg-white border-2 rounded-xl">
+                      <div className="p-5">
+                        <h1 className="text-xl pb-1 font-semibold">
+                        Interrogations
+                        </h1>
+                        <p className="text-base opacity-80 ">
+                          There is nothing available at this moment
+                        </p>
+                        {/* <Profile /> */}
+                      </div>
+                    </div>
+                  </div></div>
                   </div>
                 </div>
               </div>
