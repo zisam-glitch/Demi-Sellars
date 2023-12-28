@@ -70,8 +70,8 @@ const StampDutyCalculator = ({ regularPrice, discountPrice }) => {
           We’ve updated our calculator to take into account the stamp duty cut
           announced by the chancellor on 23 September 2023.
         </p>
-        <div className="flex gap-[3%] py-8 items-end">
-          <div className="flex flex-col gap-2 w-[19%]">
+        <div className="flex md:flex-row flex-col md:gap-[3%] gap-4 py-8 items-end">
+          <div className="flex flex-col gap-2 w-full md:w-[19%]">
             <label className="text-lg font-semibold">Price</label>
             <div className="relative">
               <span className="absolute left-3 top-[11.7px] text-lg font-semibold">
@@ -85,7 +85,7 @@ const StampDutyCalculator = ({ regularPrice, discountPrice }) => {
               />
             </div>
           </div>
-          <div className="flex flex-col gap-2 w-[59%]">
+          <div className="flex flex-col gap-2 w-full md:w-[59%]">
             <label className="text-lg font-semibold">i am....</label>
             <select
               value={buyerType}
@@ -101,7 +101,7 @@ const StampDutyCalculator = ({ regularPrice, discountPrice }) => {
               </option>
             </select>
           </div>
-          <div className="flex flex-col gap-3 w-[19%]">
+          <div className="flex flex-col gap-3 w-full md:w-[19%]">
             <button
               className="flex justify-center text-lg font-medium text-white gap-2 items-center bg-lightblue py-3 px-6 outline outline-lightblue outline-1 rounded-[2px] hover:shadow-lg hover:bg-litedarkblue"
               onClick={handleCalculateClick}

@@ -29,7 +29,7 @@ export default function ListingItem({ listing }) {
                     : listing.regularPrice.toLocaleString("GBP")}
                   {listing.type === "rent" && " / month"}
                 </p>
-                <div className="text-slate-700 flex gap-6">
+                <div className="text-slate-700 flex gap-3">
                   <div className=" flex gap-2 items-center font-normal text-lg">
                     <IoBedOutline />
                     {listing.bedrooms > 1

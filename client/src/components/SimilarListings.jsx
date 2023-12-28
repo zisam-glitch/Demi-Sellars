@@ -33,9 +33,9 @@ const SimilarListings = ({ listingId }) => {
       )}
       {!loading && similarListings.length > 0 && (
         <>
-        <div className=" rounded-xl bg-footer py-14 px-10 flex flex-col gap-2 my-10">
+        <div className=" rounded-xl bg-footer py-14 md:px-10 px-6 flex flex-col gap-2 my-10">
           <h2 className="text-2xl font font-semibold pb-4">Similar Properties</h2>
-          <div className="flex justify-between gap-[2%]">
+          <div className="flex md:flex-row flex-col justify-between gap-6 md:gap-[2%]">
             {similarListings.slice(0, 4).map((listing) => (
               <SimilarListingsItem key={listing._id} listing={listing} />
             ))}

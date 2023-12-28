@@ -397,7 +397,7 @@ export default function Search() {
                     </Link>
                   </h2>
                 </div>
-                <div className="flex justify-between gap-[2%]">
+                <div className="flex gap-[2%]">
                   {listing.slice(0, 4).map((listing) => (
                     <SaveListingItem
                       listing={listing}

@@ -152,7 +152,7 @@ export default function Listing() {
   return (
     <>
       <Header />
-      <div className="pt-10">
+      <div className="md:pt-10">
         <main>
           <div className="px-10">
             {loading && <p className="text-center my-7 text-2xl">Loading...</p>}
@@ -162,17 +162,17 @@ export default function Listing() {
           </div>
           {listing && !loading && !error && (
             <>
-              <div className="px-10">
-                <div className="flex justify-between items-center">
+              <div className="md:px-10 px-0">
+                <div className="flex px-6 md-px-0 pt-5 pb-4 md:p-0  justify-between items-center">
                   <div className="">
-                    <h1 className="mb-5 font-semibold text-[30px]">
+                    <h1 className="md:mb-5 mb-0 md:font-semibold text md:text-[30px]">
                       {listing.name}
                     </h1>
                   </div>
                   <div className="flex gap-4 items-center">
                     <div>
                       <div
-                        className=" text-lg flex gap-2 items-center cursor-pointer"
+                        className="md:flex hidden text-lg  gap-2 items-center cursor-pointer"
                         onClick={() => {
                           navigator.clipboard.writeText(window.location.href);
                           setCopied(true);
@@ -181,7 +181,7 @@ export default function Listing() {
                           }, 2000);
                         }}
                       >
-                        <TbUpload className="text-lg" /> Share
+                        <TbUpload className="text-lg " /> Share
                       </div>
                       {copied && (
                         <p className="fixed top-[20%] right-[7%] z-10 rounded-md bg-slate-100 p-2">
@@ -202,7 +202,7 @@ export default function Listing() {
                     {listing.imageUrls.map((url) => (
                       <SwiperSlide key={url}>
                         <div
-                          className="h-[550px] rounded-xl"
+                          className="md:h-[550px] h-[350px] md:rounded-xl"
                           style={{
                             background: `url(${url}) center no-repeat`,
                             backgroundSize: "cover",
@@ -211,14 +211,36 @@ export default function Listing() {
                       </SwiperSlide>
                     ))}
                   </Swiper>
-                  <div className="flex my-10 gap-[2%]">
-                    <div className="w-[68%]">
+                  <div className="flex md:flex-row flex-col my-6 md:my-10 gap-[2%]">
+                    <div className="w-full md:w-[68%] md:px-0 px-6">
                       <div>
                         <div className="">
-                          <h1 className="text-3xl font-semibold ">
+                          <div className="pb-1 md:hidden block">
+                            <p className="text-lg font-semibold text-lightblue underline">
+                              {listing.type === "rent"
+                                ? "For Rent"
+                                : "For Sale"}
+                            </p>
+                            <h2 className="text-[26px] font-semibold ">
+                              £
+                              {listing.offer
+                                ? listing.discountPrice.toLocaleString("en-GB")
+                                : listing.regularPrice.toLocaleString("en-GB")}
+                              {listing.type === "rent" && " / month"}
+                            </h2>
+                          </div>
+                          <div className="pb-3 md:hidden block">
+                            <a
+                              className=" font-semibold text-lg underline underline-lightblue underline-offset-8 decoration-lightblue decoration-1 hover:decoration-2	"
+                              href="#mortgage"
+                            >
+                              See how much I could borrow
+                            </a>
+                          </div>
+                          <h1 className="md:text-3xl text-xl font-semibold ">
                             {listing.address}
                           </h1>
-                          <p className="py-3 pb-4 text-lg">
+                          <p className="md:py-3 py-1 pb-4 text-lg">
                             {" "}
                             {listing.bedrooms > 1
                               ? `${listing.bedrooms} bedrooms `
@@ -263,7 +285,7 @@ export default function Listing() {
                             </li>
                           </ul>
                         </div>
-                        <div className="py-9  gap-4 ">
+                        <div className="py-9 grid grid-cols-2  gap-4 ">
                           <div className="">
                             <p className=" font-semibold text-lg">Tenure:</p>
                             <p className="text-lg"> {listing.tenure} </p>
@@ -311,7 +333,7 @@ export default function Listing() {
                       </div>
                       <hr id="mortgage" className=" pb-9" />
                       <div className="cssshadow  rounded-xl font-semibold">
-                        <div className="p-6">
+                        <div className="md:p-6 p-3">
                           <h1 className="text-2xl font-semibold pb-4">
                             Mortgage Calculator
                           </h1>
@@ -439,7 +461,7 @@ export default function Listing() {
                           </div>
                         </div>
                         <hr />
-                        <div className="p-6">
+                        <div className="md:p-6 p-3">
                           <div className="flex justify-between items-center">
                             <Link to="/mortgage-calculator">
                               <button className="flex justify-center text-lg font-medium text-white gap-2 items-center bg-lightblue py-3 px-6 outline outline-lightblue outline-1 rounded hover:shadow-lg hover:bg-litedarkblue">
@@ -447,7 +469,7 @@ export default function Listing() {
                                 <FaArrowUpRightFromSquare />
                               </button>
                             </Link>
-                            <div className="flex gap-1 items-center">
+                            <div className="md:flex gap-1 items-center hidden">
                               <p>Calculator by</p>
                               <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
                                 <span className="text-darkblue">Demi</span>
@@ -475,10 +497,29 @@ export default function Listing() {
                       </div>
                     </div>
 
-                    <div> </div>
+                    <div className="px-6 py-3  bg-white fixed bottom-0 right-0 left-0 block md:hidden border-t-2 shadow-md">
+                      <div className="flex gap-[4%]">
+                        <a
+                          className="flex flex-col w-[48%]"
+                          href={`tel:${listing.phone}`}
+                        >
+                          <button className="flex justify-center font-semibold text-darkblue gap-2 items-center bg-transparent py-3 px-6 outline outline-darkblue outline-2 rounded hover:shadow-lg hover:bg-lightblue hover:outline-lightblue hover:text-white">
+                            <MdPhone /> Call  Owner
+                          </button>
+                        </a>
+                        <a
+                          className="flex flex-col  w-[48%]"
+                          href={`mailto:${listing.email}`}
+                        >
+                          <button className="flex justify-center font-medium text-white gap-2 items-center bg-lightblue py-3 px-6 outline outline-lightblue outline-1 rounded hover:shadow-lg hover:bg-litedarkblue">
+                            <GoMail /> Email  Owner
+                          </button>
+                        </a>
+                      </div>
+                    </div>
 
                     <div className="w-[30%]">
-                      <div className="p-10 cssshadow rounded-xl sticky-possiton ">
+                      <div className="p-10 cssshadow rounded-xl md:block hidden sticky-possiton ">
                         <div className="flex justify-between items-center pb-4">
                           <h2 className="text-3xl font-semibold ">
                             £{" "}
@@ -501,11 +542,11 @@ export default function Listing() {
                         </div>
                         <div>
                           <div className="py-5">
-                          {!listing.approved ? (
-                            <p className="text-red-700">Pending</p>
-                          ) : (
-                            ""
-                          )}
+                            {!listing.approved ? (
+                              <p className="text-red-700">Pending</p>
+                            ) : (
+                              ""
+                            )}
                           </div>
                         </div>
                         <div className="flex flex-col gap-4">

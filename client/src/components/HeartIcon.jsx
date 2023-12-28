@@ -39,15 +39,15 @@ const HeartIcon = ({ itemId, isSaved }) => {
           {isFavorited ? (
             <>
               <div className="flex gap-2 items-center text-lightblue ">
-                <IoBookmark className="text-xl" />
-                <span className="  text-lg">Saved</span>
+                <IoBookmark className="md:text-xl " />
+                <span className="  md:text-lg">Saved</span>
               </div>
             </>
           ) : (
             <>
               <div className="flex gap-2 items-center">
-                <MdBookmarkBorder className="text-xl" />
-                <span className="text-lg">Save</span>
+                <MdBookmarkBorder className="md:text-xl" />
+                <span className="md:text-lg">Save</span>
               </div>
             </>
           )}
