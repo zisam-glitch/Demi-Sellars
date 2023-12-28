@@ -11,17 +11,17 @@ export default function ListingItem({ listing }) {
     <>
       <div className="bg-white shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-full">
         <Link to={`/listing/${listing._id}`}>
-          <div className="flex gap-6">
+          <div className="flex md:flex-row flex-col gap-6">
             <img
               src={
                 listing.imageUrls[0] ||
                 "https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/Sales_Blog/real-estate-business-compressor.jpg?width=595&height=400&name=real-estate-business-compressor.jpg"
               }
               alt="listing cover"
-              className="w-[55%] h-[320px] sm:h-[400px] object-cover "
+              className="md:w-[55%] w-full md:h-[320px] h-[250px] object-cover "
             />
             <div className="flex items-center">
-              <div className="py-10  flex flex-col gap-4 w-full">
+              <div className="md:py-10 px-4 pb-4 flex flex-col gap-4 w-full">
                 <p className="text-black mt-2 text-[28px] font-semibold ">
                   £
                   {listing.offer

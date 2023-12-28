@@ -28,28 +28,32 @@ const ContactUs = () => {
   return (
     <>
       <Header />
-  <div className="py-10">
-      <div className="px-48 pt-20 pb-10">
-        <h1 className="text-4xl pb-4 font-semibold leading-snug">
+  <div className="md:py-10 py-0">
+      <div className="md:px-48 px-6 pt-20 pb-10">
+        <h1 className="md:text-4xl md:hidden block text-3xl pb-4 font-semibold leading-snug">
+          Get in touch with the UK's leading estate agent for a
+          consultation
+        </h1>
+        <h1 className="md:text-4xl hidden md:block text-3xl pb-4 font-semibold leading-snug">
           Get in touch with the UK's leading estate <br /> agent for a
           consultation
         </h1>
        
       </div>
-      <div className="px-48">
+      <div className="md:px-48 px-6">
         <form ref={form} onSubmit={sendEmail}>
           <div className="flex flex-col gap-8">
-            <div className="flex gap-8">
-              <div className="w-1/2">
-                <p className="pb-1 font-medium text-base">Email address</p>
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="md:w-1/2 w-full">
+                <p className="pb-1 font-medium text-base">First Name</p>
                 <input
                   name="user_email"
                   type="email"
                   className="w-full bg-background outline-1 focus:outline-lightblue rounded p-3"
                 />
               </div>
-              <div className="w-1/2">
-                <p className="pb-1 font-medium text-base">Email address</p>
+              <div className="md:w-1/2 w-full">
+                <p className="pb-1 font-medium text-base">Last Name</p>
                 <input
                   name="user_email"
                   type="email"
@@ -57,17 +61,17 @@ const ContactUs = () => {
                 />
               </div>
             </div>
-            <div className="flex gap-8">
-              <div className="w-1/2">
-                <p className="pb-1 font-medium text-base">Email address</p>
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="md:w-1/2 w-full">
+                <p className="pb-1 font-medium text-base">Email Address</p>
                 <input
                   name="user_email"
                   type="email"
                   className="w-full bg-background outline-1 focus:outline-lightblue rounded p-3"
                 />
               </div>
-              <div className="w-1/2">
-                <p className="pb-1 font-medium text-base">Email address</p>
+              <div className="md:w-1/2 w-full">
+                <p className="pb-1 font-medium text-base">Phone Number</p>
                 <input
                   name="user_email"
                   type="email"
@@ -76,7 +80,7 @@ const ContactUs = () => {
               </div>
             </div>
             <div>
-              <p className="pb-1 font-medium text-base">Email address</p>
+              <p className="pb-1 font-medium text-base">Massage</p>
               <textarea
                 rows="6"
                 name="user_email"

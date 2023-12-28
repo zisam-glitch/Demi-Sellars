@@ -34,8 +34,8 @@ export default function App() {
         <Route path='/our-services' element={<Services />} />{/* done */}
         <Route path='/mortgage-calculator' element={<Mortgage />} />{/* done */}
         <Route path='/about-us' element={<About />} />{/* done */}
-        <Route path='/contact-us' element={<ContactUs />} />
-        <Route path='/search' element={<Search />} />
+        <Route path='/contact-us' element={<ContactUs />} />{/* done */}
+        <Route path='/search' element={<Search />} />{/* done */}
         <Route path='/listing/saved' element={<SavedListings />} />
         <Route path='/listing/requests' element={<ManageListings />} />
         <Route path='/listing/:listingId' element={<Listing />} />

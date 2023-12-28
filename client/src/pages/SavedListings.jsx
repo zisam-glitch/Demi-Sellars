@@ -4,7 +4,7 @@ import SwiperCore from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css/bundle";
 import Header from "../components/Header";
-import ListingItem from "../components/ListingItem";
+import ListingItem from "../components/AdminListingItem";
 import { Link } from "react-router-dom";
 
 export default function SavedListings() {

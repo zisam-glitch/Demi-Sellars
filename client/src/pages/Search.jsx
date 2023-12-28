@@ -174,7 +174,29 @@ export default function Search() {
       <Header />
 
       <div className="flex flex-col">
-        <div className="px-10 py-7  border-b-2">
+      <div className="md:px-10 px-6 md:py-7 py-4 md:hidden block  border-b-2">
+          <form onSubmit={handleSubmit} className="flex flex-row gap-[3%]">
+            <div className="flex flex-col gap-2 w-[72%]">
+             
+              <input
+                type="text"
+                id="searchTerm"
+                placeholder="Search..."
+                className="outline-sec rounded-lg w-full"
+                value={sidebardata.searchTerm}
+                onChange={handleChange}
+              />
+            </div>
+          
+            <div className=" flex flex-col gap-2 w-[25%]">
+             
+              <button className="w-full bg-lightblue text-white p-3 rounded-[2px] hover:opacity-95">
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+        <div className="px-10 py-7 hidden md:block  border-b-2">
           <form onSubmit={handleSubmit} className="flex flex-row gap-[3%]">
             <div className="flex flex-col gap-2 w-[25%]">
               <label className=" text-lg pl-1 whitespace-nowrap font-semibold">
@@ -359,7 +381,7 @@ export default function Search() {
             {error && ""}
             {!loading && listing == null && ""}
             {listing && listing.length > 0 && (
-              <div className="mx-10 rounded-xl bg-white p-8 flex flex-col gap-2 mt-10">
+              <div className="mx-10 hidden md:flex rounded-xl bg-white p-8  flex-col gap-2 mt-10">
                 <div className="">
                   <h2 className=" flex justify-between text-lightblue">
                     <div className="  px-4 rounded-[8px] flex gap-1 items-center">
@@ -387,8 +409,8 @@ export default function Search() {
               </div>
             )}
           </main>
-          <div className="flex px-10 py-20 gap-[5%]">
-            <div className=" w-[70%]  flex flex-col gap-12">
+          <div className="md:flex md:px-10 px-6 md:py-20 py-10 block gap-[5%]">
+            <div className=" md:w-[70%] w-full  flex flex-col gap-12">
               {!loading && listings.length === 0 && (
                 <div className="w-full flex-col gap-4 flex justify-center p-20 items-center">
                   <p className="  text-xl text-slate-700">
@@ -421,7 +443,7 @@ export default function Search() {
                 </button>
               )}
             </div>
-            <div className="w-[25%] ">
+            <div className="w-[25%] hidden md:block ">
               <div className="mx-5 rounded-xl mb-8 p-8 bg-white">
                 <div className=" ">
                   <div>
