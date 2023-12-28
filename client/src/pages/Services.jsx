@@ -5,11 +5,12 @@ import Footer from "../components/Footer";
 export default function Services() {
   return (
     <>
+
       <Header />
       <div className=" flex flex-col md:flex-row bg-purple">
         <div className="md:w-1/2 w-full h-80 md:h-auto bg-cover bg-center bg-[url(https://images.ctfassets.net/02vwvgr6spsr/1CUg99fiaZjIQdJ2WAZz4b/9fca892c843cff3a62bbf35881e98f5c/just-ask-zoopla-estate-agent.jpg?fm=avif&w=768&q=50)]"></div>
         <div className="md:w-1/2 w-full px-6 py-10 md:p-16">
-          <h2 className="font-semibold md:text-[34px] text-3xl md:pt-5 pt-0 pb-2">
+          <h2 className="font-semibold md:text-[34px] text-3xl md:py-5 pt-0 pb-2">
             Premium Property Sales
           </h2>
           <p className="text-lg text-black pb-5">
