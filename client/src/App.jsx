@@ -36,7 +36,7 @@ export default function App() {
         <Route path='/about-us' element={<About />} />{/* done */}
         <Route path='/contact-us' element={<ContactUs />} />{/* done */}
         <Route path='/search' element={<Search />} />{/* done */}
-        <Route path='/listing/:listingId' element={<Listing />} />
+        <Route path='/listing/:listingId' element={<Listing />} />{/* done */}
         <Route element={<PrivateRoute />}>
           <Route path='/my-account' element={<MyAccount />} />
           <Route path='/my-listings' element={<MyListing />} />

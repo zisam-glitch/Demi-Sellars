@@ -576,7 +576,7 @@ export default function Listing() {
                 {params.listingId && (
                   <SimilarListings listingId={params.listingId} />
                 )}
-                <form onSubmit={handleSubmit} className="px-10 pt-10">
+                <form onSubmit={handleSubmit} className="md:px-10 px-6 pt-10">
                   <button onClick={scrollToTop} className="f">
                     <input
                       type="text"
