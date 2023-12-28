@@ -19,7 +19,6 @@ import { MdPhone } from "react-icons/md";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { TbUpload } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import { IoSearchOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import SimilarListings from "../components/SimilarListings";
 

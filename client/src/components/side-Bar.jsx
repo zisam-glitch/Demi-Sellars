@@ -12,12 +12,11 @@ import { useSelector } from "react-redux";
 import { MdManageSearch } from "react-icons/md";
 import { IoIosLogOut } from "react-icons/io";
 
-
 export default function Sidebar() {
-    const { currentUser } = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user);
 
   return (
-    <div className="w-[22%]  bg-white border-r-2">
+    <div className="w-[22%] md:block hidden bg-white border-r-2">
       <div className="h-screen flex flex-col justify-between  py-10">
         <div>
           <div className="px-3 border-b-2  ">
@@ -40,17 +39,7 @@ export default function Sidebar() {
                     Home
                   </span>
                 </NavLink>
-                <NavLink
-                  className="text-lg px-4 py-2"
-                  to="/listing/saved"
-                  exact
-                  activeClassName=""
-                >
-                  <span className="flex items-center gap-3">
-                    <CiBookmark className="text-normal " />
-                    Saved listings
-                  </span>
-                </NavLink>
+
                 <NavLink
                   className="text-lg px-4 py-2"
                   to="/create-listing"
@@ -89,6 +78,17 @@ export default function Sidebar() {
           </div>
           <div className=" py-6  ">
             <nav className=" flex flex-col px-3 gap-0 " id="sidebar">
+              <NavLink
+                className="text-lg px-4 py-2"
+                to="/listing/saved"
+                exact
+                activeClassName=""
+              >
+                <span className="flex items-center gap-3">
+                  <CiBookmark className="text-normal " />
+                  Saved listings
+                </span>
+              </NavLink>
               <NavLink
                 className="text-lg px-4 py-2"
                 to="/create-listing"

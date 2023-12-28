@@ -36,12 +36,12 @@ export default function App() {
         <Route path='/about-us' element={<About />} />{/* done */}
         <Route path='/contact-us' element={<ContactUs />} />{/* done */}
         <Route path='/search' element={<Search />} />{/* done */}
-        <Route path='/listing/saved' element={<SavedListings />} />
-        <Route path='/listing/requests' element={<ManageListings />} />
         <Route path='/listing/:listingId' element={<Listing />} />
         <Route element={<PrivateRoute />}>
           <Route path='/my-account' element={<MyAccount />} />
           <Route path='/my-listings' element={<MyListing />} />
+          <Route path='/listing/saved' element={<SavedListings />} />
+          <Route path='/listing/requests' element={<ManageListings />} />
           <Route path='/update-listings' element={<UpdateListingS />} />
           <Route path='/sign-out' element={<SingOut />} />
           <Route path='/settings' element={<Settings />} />
