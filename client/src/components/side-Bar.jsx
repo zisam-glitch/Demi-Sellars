@@ -114,7 +114,7 @@ export default function Sidebar() {
               {currentUser && currentUser.role === "admin" ? (
                 <NavLink
                   className="text-lg px-4 py-2"
-                  to="/my-listings"
+                  to="/listing/requests"
                   exact
                   activeClassName=""
                 >

@@ -3,9 +3,8 @@ import Sidebar from "../components/side-Bar";
 import { IoSearchOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import SingOut from "../components/SingOut"
-import DelateAccount from "../components/DelateAccount"
-
+import SingOut from "../components/SingOut";
+import DelateAccount from "../components/DelateAccount";
 
 const Tabs = () => {
   const [openTab, setOpenTab] = React.useState(1);
@@ -97,10 +96,9 @@ const Tabs = () => {
                     href="#link2"
                     role="tablist"
                   >
-                   Delete account
+                    Delete account
                   </a>
                 </li>
-               
               </ul>
               <hr />
               <div className="relative flex flex-col min-w-0 break-words w-full mb-2 ">
@@ -110,19 +108,61 @@ const Tabs = () => {
                       className={openTab === 1 ? "block" : "hidden"}
                       id="link1"
                     >
-                       <div className="py-5 flex gap-10 ">
+                      <div className="py-5 flex gap-10 ">
                         <div className="w-full bg-white border-2 rounded-xl">
-                          <div className="p-5">
+                          <div className="p-5 flex flex-col gap-2">
                             <h1 className="text-xl pb-1 font-semibold">
-                            Sing Out
+                              Sing Out
                             </h1>
-                            <div className="flex gap-2">
                             <p className="text-base opacity-80 ">
-                            Your Account informations will be removed until you sign in again
+                              Thank you for using our platform! Before you sign
+                              out, here are a few things to consider:
                             </p>
-                            <SingOut />
+                            <ul className="text-base opacity-80 flex flex-col gap-2 pb-2">
+                              <li>
+                                <strong>Double-Check Your Work:</strong> Ensure
+                                that you have saved any unsaved changes or
+                                completed any necessary tasks before signing
+                                out.
+                              </li>
+                              <li>
+                                <strong>Privacy Check:</strong> If you're using
+                                a shared device, make sure to log out to protect
+                                your account's privacy.
+                              </li>
+                              <li>
+                                <strong>Stay Updated:</strong> Check for any
+                                important announcements, updates, or new
+                                features we might have released. Stay in the
+                                loop for an enhanced user experience.
+                              </li>
+                              <li>
+                                <strong>Feedback Matters:</strong> We value your
+                                feedback. If you have a moment,{" "}
+                                <a href="#">
+                                  let us know about your experience
+                                </a>
+                                . Your insights help us improve our platform.
+                              </li>
+                              <li>
+                                <strong>Connect with Us:</strong> Follow us on{" "}
+                                <a href="#" target="_blank">
+                                  social media
+                                </a>{" "}
+                                or subscribe to our{" "}
+                                <a href="#" target="_blank">
+                                  newsletter
+                                </a>{" "}
+                                to stay connected. Be the first to know about
+                                promotions, tips.
+                              </li>
+                            </ul>
+                            <div className="flex gap-2">
+                              <p className="text-base opacity-80 ">
+                              Remember, we appreciate your trust in us. Have a great day!
+                              </p>
+                              <SingOut />
                             </div>
-                           
                           </div>
                         </div>
                       </div>
@@ -135,19 +175,18 @@ const Tabs = () => {
                         <div className="w-full bg-white border-2 rounded-xl">
                           <div className="p-5">
                             <h1 className="text-xl pb-1 font-semibold">
-                            Delete Account
+                              Delete Account
                             </h1>
                             <div className="flex gap-2">
-                            <p className="text-base opacity-80 ">
-                              The User will purmanently delated
-                            </p>
-                            <DelateAccount />
+                              <p className="text-base opacity-80 ">
+                                The User will purmanently delated
+                              </p>
+                              <DelateAccount />
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    
                   </div>
                 </div>
               </div>

@@ -30,7 +30,7 @@ const ApproveListing = ({ itemId, approved }) => {
   return (
     <div>
       <span onClick={handleApprove} style={{ cursor: 'pointer' }}>
-        {isApproved ? '✅' : '❌'}
+        {isApproved ? <p className='text-lg text-lightblue'>Approved</p> :  <p className='text-lg '>Approve</p>}
       </span>
     </div>
   );

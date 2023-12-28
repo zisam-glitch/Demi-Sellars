@@ -32,7 +32,7 @@ export default function App() {
         <Route path='/sign-in' element={<SignIn />} />{/* done */}
         <Route path='/sign-up' element={<SignUp />} />{/* done */}
         <Route path='/our-services' element={<Services />} />{/* done */}
-        <Route path='/mortgage-calculator' element={<Mortgage />} />
+        <Route path='/mortgage-calculator' element={<Mortgage />} />{/* done */}
         <Route path='/about-us' element={<About />} />
         <Route path='/contact-us' element={<ContactUs />} />
         <Route path='/search' element={<Search />} />

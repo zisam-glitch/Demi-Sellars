@@ -492,7 +492,7 @@ export default function Listing() {
                             {listing.type === "rent" ? "For Rent" : "For Sale"}
                           </p>
                         </div>
-                        <div className="pb-10">
+                        <div className="">
                           <a
                             className=" font-semibold text-lg underline underline-lightblue underline-offset-8 decoration-lightblue decoration-1 hover:decoration-2	"
                             href="#mortgage"
@@ -501,11 +501,13 @@ export default function Listing() {
                           </a>
                         </div>
                         <div>
+                          <div className="py-5">
                           {!listing.approved ? (
                             <p className="text-red-700">Pending</p>
                           ) : (
                             ""
                           )}
+                          </div>
                         </div>
                         <div className="flex flex-col gap-4">
                           <a

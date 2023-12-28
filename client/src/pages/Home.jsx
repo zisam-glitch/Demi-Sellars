@@ -75,7 +75,7 @@ export default function Home() {
         {currentUser ? (
           <></>
         ) : (
-          <div className="flex md:flex-row flex-col items-center gap-6 md:gap-2 mx-10 bg-purple mt-20 rounded-xl">
+          <div className="flex md:flex-row flex-col items-center gap-6 md:gap-2 mx-6 md:mx-10 bg-purple mt-20 rounded-xl">
             <div className="md:w-1/2 w-full">
               <div className="p-6">
                 <h1 className="font-semibold text-3xl pb-4">

@@ -158,7 +158,7 @@ export default function Profile() {
   };
   return (
     <>
-      <span onClick={handleDeleteUser} className="text-red-700 cursor-pointer">
+      <span onClick={handleDeleteUser} className="text-red-600 font-bold cursor-pointer">
         Delete account
       </span>
     </>

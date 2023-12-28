@@ -160,7 +160,7 @@ export default function Profile() {
     <>
       {" "}
    
-          <span onClick={handleSignOut} className="text-red-700 cursor-pointer">
+          <span onClick={handleSignOut} className="text-red-600 font-bold cursor-pointer">
             Sign out
           </span>
          

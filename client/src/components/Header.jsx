@@ -217,7 +217,7 @@ export default function Header() {
             <div>
                  <Link to="/sign-in">
               <button className="flex gap-2  bg-lightblue justify-center px-6 outline outline-lightblue outline-1 rounded hover:shadow-lg hover:bg-litedarkblue">
-                <div className="flex items-center gap-3 ">
+                <div className="flex items-center gap-3 py-2 ">
                   <span className="text-white	">Sing in</span>
                 </div>
               </button>

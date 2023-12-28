@@ -190,11 +190,11 @@ export default function Profile() {
                 key={listing._id}
                 className=" shadow-sm rounded-lg px-5 py-4 flex justify-between items-center gap-8"
               >
-                <Link to={`/listing/${listing._id}`}>
+                <Link className="w-[15%]" to={`/listing/${listing._id}`}>
                   <img
                     src={listing.imageUrls[0]}
                     alt="listing cover"
-                    className="h-24 w-40 object-contain"
+                    className="h-24 w-full object-cover"
                   />
                 </Link>
                 <Link
@@ -242,12 +242,19 @@ export default function Profile() {
             ))}
           </div>
         ) : (
-          <p className="text-lg justify-center items-center font-semibold flex flex-col">
-            You have no listings.{" "}
-            <Link className="text-lightblue" to="/create-listing">
-              Create one now!
-            </Link>
-          </p>
+          <div className="py-20 flex flex-col gap-4 justify-center items-center">
+            <img
+              className="w-[50%]"
+              src="https://res.cloudinary.com/db1i46uiv/image/upload/v1703702068/svg-image-7_ya1fgd.svg"
+              alt=""
+            />{" "}
+            <p className="text-xl justify-center items-center font-semibold flex flex-col">
+              You have no listings.{" "}
+              <Link className="text-lightblue" to="/create-listing">
+                Create one now!
+              </Link>
+            </p>
+          </div>
         )}
       </div>
     </>
