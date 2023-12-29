@@ -7,7 +7,6 @@ import { CiCalculator1 } from "react-icons/ci";
 import { CiSettings } from "react-icons/ci";
 import { CiBoxList } from "react-icons/ci";
 import { TfiStamp } from "react-icons/tfi";
-import { MdOutlineContacts } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { MdManageSearch } from "react-icons/md";
 import { IoIosLogOut } from "react-icons/io";
@@ -30,13 +29,13 @@ export default function Sidebar() {
               <nav className=' flex flex-col gap-1 ' id='sidebar'>
                 <NavLink
                   className='text-lg px-4 py-2'
-                  to='/'
+                  to='/my-account'
                   exact
                   activeClassName=''
                 >
                   <span className='flex items-center gap-3'>
                     <IoHomeOutline className=' ' />
-                    Home
+                    Dashboard
                   </span>
                 </NavLink>
 
@@ -53,24 +52,13 @@ export default function Sidebar() {
                 </NavLink>
                 <NavLink
                   className='text-lg px-4 py-2'
-                  to='/my-listings'
+                  to='/stamp'
                   exact
                   activeClassName=''
                 >
                   <span className='flex items-center gap-3'>
                     <TfiStamp className=' ' />
                     Stamp Duty Calculator{" "}
-                  </span>
-                </NavLink>
-                <NavLink
-                  className='text-lg px-4 py-2'
-                  to='/contact-us'
-                  exact
-                  activeClassName=''
-                >
-                  <span className='flex items-center gap-3'>
-                    <MdOutlineContacts className='' />
-                    Contact Us{" "}
                   </span>
                 </NavLink>
               </nav>

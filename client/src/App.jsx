@@ -4,6 +4,7 @@ import Layout from "./Layout";
 import { lazy } from "react";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import StampDutyCalculator from "./components/StampDutyCalculator";
 
 // pages
 const About = lazy(() => import("./pages/About"));
@@ -48,9 +49,7 @@ export default function App() {
             {/* done */}
             {/* private Route */}
             <Route element={<PrivateRoute />}>
-              <Route path='/my-account' element={<MyAccount />} />
-              <Route path='/my-listings' element={<MyListing />} />
-              <Route path='/listing/saved' element={<SavedListings />} />
+              <Route path='edit-email' element={<EditListingEmail />} />
               <Route path='/listing/requests' element={<ManageListings />} />
               <Route path='/update-listings' element={<UpdateListingS />} />
               <Route path='/sign-out' element={<SingOut />} />
@@ -61,7 +60,10 @@ export default function App() {
                 path='/update-listing/:listingId'
                 element={<UpdateListing />}
               />
-              <Route path='edit-email' element={<EditListingEmail />} />
+              <Route path='/my-account' element={<MyAccount />} />
+              <Route path='/my-listings' element={<MyListing />} />
+              <Route path='/listing/saved' element={<SavedListings />} />
+              <Route path='/stamp' element={<StampDutyCalculator />} />
             </Route>
           </Route>
           <Route path='/sign-in' element={<SignIn />} />

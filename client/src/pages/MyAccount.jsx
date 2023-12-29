@@ -1,14 +1,14 @@
 import React from "react";
-import Sidebar from "../components/sidebar";
+import Sidebar from "../components/side-Bar";
 import Account from "../components/Account";
 
 const Tabs = () => {
   return (
     <>
-      <div className='md:px-20 px-0 md:py-20 py-0 bg-white md:bg-footer min-h-screen'>
+      <div className=''>
         <div className='md:flex block gap-10'>
           <Sidebar />
-          <div className=' md:shadow-lg shadow-transparent rounded-xl bg-white scrolly w-full md:w-[75%]'>
+          <div className='md:shadow-lg mt-10 shadow-transparent rounded-xl bg-white scrolly w-full md:w-[75%]'>
             <Account />
           </div>
         </div>
