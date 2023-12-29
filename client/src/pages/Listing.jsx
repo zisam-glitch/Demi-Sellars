@@ -12,7 +12,6 @@ import { PiBathtubLight } from "react-icons/pi";
 import { PiArmchairLight } from "react-icons/pi";
 import { PiLampLight } from "react-icons/pi";
 import { LiaParkingSolid } from "react-icons/lia";
-import Footer from "../components/Footer";
 import { GoMail } from "react-icons/go";
 import { MdPhone } from "react-icons/md";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
@@ -607,7 +606,6 @@ export default function Listing() {
           )}
         </main>
       </div>
-      <Footer />
     </>
   );
 }

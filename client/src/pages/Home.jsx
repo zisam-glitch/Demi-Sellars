@@ -8,8 +8,6 @@ import ListingItem from "../components/ListingItem";
 import BlogSlider from "../components/BlogSlider";
 import TownsAnsCities from "../components/TownsAndCities";
 import Search from "../components/Search";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 import { useSelector } from "react-redux";
 
@@ -175,7 +173,6 @@ export default function Home() {
         </div>
         <TownsAnsCities />
 
-        <Footer />
         {/* swiper */}
 
         {/* <Swiper navigation>

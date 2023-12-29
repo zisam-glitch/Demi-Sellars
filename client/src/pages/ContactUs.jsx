@@ -94,7 +94,6 @@ const ContactUs = () => {
           </form>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

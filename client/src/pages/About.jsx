@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer";
 
 export default function About() {
   return (
@@ -103,7 +102,6 @@ export default function About() {
         </div>
         <div className='md:w-1/2 w-full h-80 md:h-auto bg-cover rounded-xl bg-center bg-[url(https://cdn.prod.zoopla.co.uk/_next/static/images/person-advising-other-person-b909b6b93b73d414bd4a722723fe1d6f.jpg)]'></div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { TiHeartFullOutline } from "react-icons/ti";
 import ListingItem from "../components/ListingItem";
 import SaveListingItem from "../components/SaveListingItem";
-import Footer from "../components/Footer";
 import { useParams } from "react-router-dom";
 import SwiperCore from "swiper";
 import { Navigation } from "swiper/modules";
@@ -670,7 +669,6 @@ export default function Search() {
       <div className='mt-20'>
         <TownsAnsCities />
       </div>
-      <Footer />
     </>
   );
 }
