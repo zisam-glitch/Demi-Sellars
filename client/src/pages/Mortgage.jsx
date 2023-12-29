@@ -1,5 +1,5 @@
-// src/App.js
 import React, { useState } from "react";
+import Sidebar from "../components/side-Bar";
 
 const MortgageCalculator = () => {
   const [loanAmount, setLoanAmount] = useState(0);
@@ -19,7 +19,8 @@ const MortgageCalculator = () => {
   };
 
   return (
-    <div className=''>
+    <div className='flex'>
+      <Sidebar />
       <div className='container mx-auto mt-8'>
         <h1 className='md:text-4xl text-3xl font-semibold text-darkblue leading-snug text-center md:px-48 px-10 py-14'>
           Mortgage Calculator By Demi Sellers

@@ -39,94 +39,94 @@ export default function Header() {
 
   return (
     <>
-      <ul className="flex text-lg gap-6 items-center">
+      <ul className='flex text-lg gap-6 items-center'>
         <li>
-          <div className="inline font-medium text-blac ">
-            <li className="profile">
+          <div className='inline font-medium text-blac '>
+            <li className='profile'>
               <Button
-                className="text-black shadow-none text-lg p-0 outline-none border-[0]  inline font-light"
+                className='text-black shadow-none text-lg p-0 outline-none border-[0]  inline font-light'
                 onClick={showDrawer}
               >
-                <li className="inline font-medium text-black py-3 ">
-                  <div className="flex flex-row gap-3 items-center">
-                    <FaBars className="text-xl text-darkblue" />
+                <li className='inline font-medium text-black py-3 '>
+                  <div className='flex flex-row gap-3 items-center'>
+                    <FaBars className='text-xl text-darkblue' />
                   </div>
                 </li>
               </Button>
               <Drawer
                 width={500}
-                placement="right"
+                placement='right'
                 onClose={onClose}
                 open={open}
-                className="w-20"
+                className='w-20'
               >
-                <div className="px-8 bg-purple h-full py-4">
-                  <div className="bg-purple ">
-                    <ul className="flex flex-col text-2xl gap-6">
+                <div className='px-8 bg-purple h-full py-4'>
+                  <div className='bg-purple '>
+                    <ul className='flex flex-col text-2xl gap-6'>
                       <NavLink
-                        to="/search?type=sale"
+                        to='/search?type=sale'
                         exact
-                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                        className='font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
                       >
                         For Sale
                       </NavLink>
                       <NavLink
-                        to="/search?type=rent"
+                        to='/search?type=rent'
                         exact
-                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                        className='font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
                       >
                         To Rent
                       </NavLink>
                       <NavLink
-                        to="/search"
+                        to='/search'
                         exact
-                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                        className='font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
                       >
                         House prices
                       </NavLink>
                       <NavLink
-                        to="/about-us"
+                        to='/about-us'
                         exact
-                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                        className='font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
                       >
                         About Us
                       </NavLink>
                       <NavLink
-                        to="/our-services"
+                        to='/our-services'
                         exact
-                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                        className='font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
                       >
                         Our Services
                       </NavLink>
                       <NavLink
-                        to="/contact-us"
+                        to='/contact-us'
                         exact
-                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                        className='font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
                       >
                         Contact Us
                       </NavLink>
                       {currentUser ? (
                         <NavLink
-                          to="/my-account"
+                          to='/my-account'
                           exact
-                          className="font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                          className='font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
                         >
                           Account
                         </NavLink>
                       ) : (
                         <NavLink
-                          to="/sign-in"
+                          to='/sign-in'
                           exact
-                          className="font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                          className='font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
                         >
-                          Sing In
+                          Sign In
                         </NavLink>
                       )}
                       {currentUser && currentUser.role === "admin" ? (
                         <NavLink
-                          to="/listing/requests"
+                          to='/listing/requests'
                           exact
-                          className="font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
+                          className='font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
                         >
                           Manage Listings
                         </NavLink>

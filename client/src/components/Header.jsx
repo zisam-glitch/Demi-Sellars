@@ -198,7 +198,7 @@ export default function Header() {
                             </p>
                           </li>
                         </Link>
-                        <Link to='/sing-out'>
+                        <Link to='/sign-out'>
                           <li className='text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold '>
                             <LuLogOut className='text-[28px]' />
                             <p className='decoration-lightblue decoration-2 hover:underline hover:underline-offset-4'>
