@@ -27,10 +27,7 @@ const Tabs = () => {
     }
   }, [location.search]);
   return (
-    <div className='md:bg-footer bg-white w-full h-screen'>
-      <div className='md:hidden block bg-footer'>
-        <AccountHeader />
-      </div>
+    <div className='md:bg-footer bg-white border-t-2 w-full h-screen'>
       <header className='bg-white hidden md:block py-3 px-10'>
         <form onSubmit={handleSubmit} className='flex   '>
           <input

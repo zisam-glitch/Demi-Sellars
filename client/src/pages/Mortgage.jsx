@@ -22,7 +22,7 @@ const MortgageCalculator = () => {
       <h1 className='lg:text-4xl text-3xl font-semibold text-darkblue leading-snug text-center py-14'>
         Mortgage Calculator By Demi Sellers
       </h1>
-      <div className='px-14 mx-auto grid lg:grid-cols-2 grid-cols-1 gap-8'>
+      <div className='md:px-14 px-4 mx-auto grid lg:grid-cols-2 grid-cols-1 gap-8'>
         <div className='grid grid-cols-1 gap-4'>
           <div className='   '>
             <label htmlFor='loanAmount'>Loan Amount ($):</label>

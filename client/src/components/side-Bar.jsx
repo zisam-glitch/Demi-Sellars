@@ -15,43 +15,39 @@ export default function Sidebar() {
   const { currentUser } = useSelector((state) => state.user);
 
   return (
-    <div className='min-w-[20%] h-full bg-white border-r-2 border-t-2'>
+    <div className='md:min-w-[20%] min-w-[10%] h-full bg-white border-r-2 border-t-2'>
       <div className='h-screen flex flex-col justify-between pt-2 relative'>
         <div>
           <div className='border-b-2'>
             <div className=''>
               <nav className=' flex flex-col gap-1 ' id='sidebar'>
                 <NavLink
-                  className='text-lg px-4 py-2'
+                  className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
                   to='/my-account'
                   exact
                   activeClassName=''
                 >
-                  <span className='flex items-center gap-3 text-sm md:text-lg'>
-                    <IoHomeOutline className=' ' />
-                    Dashboard
-                  </span>
+                  <IoHomeOutline className=' ' />
+                  <span className='hidden md:block'>Dashboard</span>
                 </NavLink>
 
                 <NavLink
-                  className='text-lg px-4 py-2'
+                  className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
                   to='/dashboard/mortgage-calculator'
                   exact
                   activeClassName=''
                 >
-                  <span className='flex items-center gap-3 text-sm md:text-lg'>
-                    <CiCalculator1 className='' />
-                    Mortgage Calculator{" "}
-                  </span>
+                  <CiCalculator1 className='' />
+                  <span className='hidden md:block'>Mortgage Calculator </span>
                 </NavLink>
                 <NavLink
-                  className='text-lg px-4 py-2'
+                  className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
                   to='/stamp'
                   exact
                   activeClassName=''
                 >
-                  <span className='flex items-center gap-3 text-sm md:text-lg'>
-                    <TfiStamp className=' ' />
+                  <TfiStamp className=' ' />
+                  <span className='hidden md:block'>
                     Stamp Duty Calculator{" "}
                   </span>
                 </NavLink>
@@ -61,49 +57,41 @@ export default function Sidebar() {
           <div className=' py-6  '>
             <nav className=' flex flex-col gap-0 ' id='sidebar'>
               <NavLink
-                className='text-lg px-4 py-2'
+                className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
                 to='/listing/saved'
                 exact
                 activeClassName=''
               >
-                <span className='flex items-center gap-3 text-sm md:text-lg'>
-                  <CiBookmark className='text-normal ' />
-                  Saved listings
-                </span>
+                <CiBookmark className='text-normal ' />
+                <span className='hidden md:block'>Saved listings</span>
               </NavLink>
               <NavLink
-                className='text-lg px-4 py-2'
+                className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
                 to='/create-listing'
                 exact
                 activeClassName=''
               >
-                <span className='flex items-center gap-3 text-sm md:text-lg'>
-                  <IoCreateOutline className='text-lg' />
-                  Create listing
-                </span>
+                <IoCreateOutline className='text-lg' />
+                <span className='hidden md:block'>Create listing</span>
               </NavLink>
               <NavLink
-                className='text-lg px-4 py-2'
+                className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
                 to='/my-listings'
                 exact
                 activeClassName=''
               >
-                <span className='flex items-center gap-3 text-sm md:text-lg'>
-                  <CiBoxList className='text-lg' />
-                  My listings
-                </span>
+                <CiBoxList className='text-lg' />
+                <span className='hidden md:block'>My listings</span>
               </NavLink>
               {currentUser && currentUser.role === "admin" ? (
                 <NavLink
-                  className='text-lg px-4 py-2'
+                  className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
                   to='/listing/requests'
                   exact
                   activeClassName=''
                 >
-                  <span className='flex items-center gap-3 text-sm md:text-lg'>
-                    <MdManageSearch className='text-lg' />
-                    Manage listings
-                  </span>
+                  <MdManageSearch className='text-lg' />
+                  <span className='hidden md:block'>Manage listings</span>
                 </NavLink>
               ) : (
                 ""
@@ -114,26 +102,22 @@ export default function Sidebar() {
         <div className='sticky bottom-0'>
           <nav className=' flex flex-col gap-0 ' id='sidebar'>
             <NavLink
-              className='text-lg px-4 py-2'
+              className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
               to='/settings'
               exact
               activeClassName=''
             >
-              <span className='flex items-center gap-3 text-sm md:text-lg'>
-                <CiSettings className=' text-lg' />
-                Settings
-              </span>
+              <CiSettings className=' text-lg' />
+              <span className='hidden md:block'>Settings</span>
             </NavLink>
             <NavLink
-              className='text-lg px-4 py-2'
+              className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
               to='/sign-out'
               exact
               activeClassName=''
             >
-              <span className='flex items-center gap-3 text-sm md:text-lg'>
-                <IoIosLogOut className='' />
-                Sign Out
-              </span>
+              <IoIosLogOut className='' />
+              <span className='hidden md:block'>Sign Out</span>
             </NavLink>
           </nav>
         </div>

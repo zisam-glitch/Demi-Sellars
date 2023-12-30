@@ -33,6 +33,10 @@ export default function App() {
     <>
       <BrowserRouter>
         <Routes>
+          <Route path='/sign-in' element={<SignIn />} />
+          {/* done */}
+          <Route path='/sign-up' element={<SignUp />} />
+          {/* done */}
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} /> {/* done */}
             <Route path='/our-services' element={<Services />} />
@@ -70,10 +74,6 @@ export default function App() {
               />
             </Route>
           </Route>
-          <Route path='/sign-in' element={<SignIn />} />
-          {/* done */}
-          <Route path='/sign-up' element={<SignUp />} />
-          {/* done */}
         </Routes>
       </BrowserRouter>
     </>

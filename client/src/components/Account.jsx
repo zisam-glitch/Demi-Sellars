@@ -240,7 +240,7 @@ export default function Profile() {
             </div>
             <div className='flex justify-between pb-4'>
               <p className='text-lg'>
-                <b>Paddword :{""}</b> xxxxxxxx {""}
+                <b>Password :{""}</b> xxxxxxxx {""}
               </p>
               <Link>
                 <p
@@ -253,10 +253,10 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className='grid grid-cols-2 w-full gap-6'>
+          <div className='flex flex-col md:flex-row flex-wrap items-start w-full'>
             {editPassword && (
               <>
-                <div className='flex flex-col gap-3'>
+                <div className='flex flex-col gap-3 md:w-1/2 w-full pr-4'>
                   <label className='font-medium text-base'>Password</label>
                   <input
                     type='password'
@@ -266,7 +266,7 @@ export default function Profile() {
                     className='outline outline-1 rounded p-3'
                   />
                 </div>
-                <div className='flex flex-col gap-3'>
+                <div className='flex flex-col gap-3 w-full md:w-1/2'>
                   <label className='font-medium text-base'>
                     Confirm Password
                   </label>
@@ -278,7 +278,7 @@ export default function Profile() {
                     className='outline outline-1 rounded p-3'
                   />
                 </div>
-                <div className='flex flex-col gap-3'>
+                <div className='flex flex-col gap-3 mt-4'>
                   <button
                     disabled={loading}
                     className='bg-lightblue text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'

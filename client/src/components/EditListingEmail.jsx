@@ -174,7 +174,7 @@ export default function Profile() {
 
   return (
     <>
-      <div className='p-20 border border-black rounded-xl my-auto mx-auto'>
+      <div className='p-14'>
         <form
           onSubmit={handleSubmit}
           className='flex flex-col gap-6 items-start'

@@ -3,8 +3,8 @@ import Account from "../components/Account";
 
 const Tabs = () => {
   return (
-    <div className='max-w-screen min-h-screen bg-footer pt-14'>
-      <div className='shadow-lg shadow-transparent border w-[90%] rounded-xl bg-white mb-10 mx-auto px-10'>
+    <div className='max-w-screen min-h-screen md:bg-footer md:pt-14 pt-4'>
+      <div className='md:shadow-lg shadow-transparent md:border md:w-[90%] w-full  rounded-xl bg-white mb-10 mx-auto md:px-10'>
         <Account />
       </div>
     </div>

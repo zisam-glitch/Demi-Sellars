@@ -27,7 +27,7 @@ const Tabs = () => {
   }, [location.search]);
   return (
     <div className='w-full border-t-2 border-grays bg-footer h-screen'>
-      <header className='bg-white py-3 px-10'>
+      <header className='bg-white py-3 px-4 md:px-10'>
         <form onSubmit={handleSubmit} className='flex  '>
           <input
             type='text'
@@ -44,7 +44,7 @@ const Tabs = () => {
           </button>
         </form>
       </header>
-      <div className='p-10'>
+      <div className='md:p-10 px-4 py-2'>
         <div className='flex gap-1 flex-col pb-4'>
           <h1 className='text-3xl font-semibold'>List your Property</h1>
           <p className='text-lg'>List your Properties with demiselers </p>

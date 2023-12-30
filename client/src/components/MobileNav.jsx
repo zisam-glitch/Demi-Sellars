@@ -109,7 +109,7 @@ export default function Header() {
                         <NavLink
                           to='/my-account'
                           exact
-                          className='font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
+                          className='font-medium text-darkblue w-full decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
                         >
                           Account
                         </NavLink>
@@ -117,7 +117,7 @@ export default function Header() {
                         <NavLink
                           to='/sign-in'
                           exact
-                          className='font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
+                          className='font-medium text-darkblue w-full decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
                         >
                           Sign In
                         </NavLink>
@@ -126,7 +126,7 @@ export default function Header() {
                         <NavLink
                           to='/listing/requests'
                           exact
-                          className='font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
+                          className='font-medium text-darkblue w-full decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3'
                         >
                           Manage Listings
                         </NavLink>
