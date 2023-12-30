@@ -49,17 +49,17 @@ export default function App() {
             {/* done */}
             {/* private Route */}
             <Route element={<PrivateRoute />}>
-              <Route path='edit-email' element={<EditListingEmail />} />
+              <Route path='/edit-email' element={<EditListingEmail />} />
               <Route path='/listing/requests' element={<ManageListings />} />
               <Route path='/update-listings' element={<UpdateListingS />} />
-              <Route path='/sign-out' element={<SingOut />} />
-              <Route path='/settings' element={<Settings />} />
               <Route path='/edit-username' element={<EditUserName />} />
-              <Route path='/create-listing' element={<CreateListing />} />
               <Route
                 path='/update-listing/:listingId'
                 element={<UpdateListing />}
               />
+              <Route path='/create-listing' element={<CreateListing />} />
+              <Route path='/settings' element={<Settings />} />
+              <Route path='/sign-out' element={<SingOut />} />
               <Route path='/my-account' element={<MyAccount />} />
               <Route path='/my-listings' element={<MyListing />} />
               <Route path='/listing/saved' element={<SavedListings />} />

@@ -3,8 +3,6 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate, NavLink } from "react-router-dom";
 import { Button, Drawer } from "antd";
 import { RxAvatar } from "react-icons/rx";
-import { HiOutlineMail } from "react-icons/hi";
-import { RxPencil1 } from "react-icons/rx";
 import { LuLogOut } from "react-icons/lu";
 import MobileNav from "./MobileNav";
 
@@ -137,7 +135,7 @@ export default function Header() {
                   >
                     <div className='px-8 py-4 bg-purple'>
                       <ul>
-                        <Link to='/settings'>
+                        <Link to='/my-account'>
                           <li className='text-2xl cursor-pointer pb-5 font-semibold decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 '>
                             Account
                           </li>
@@ -174,32 +172,8 @@ export default function Header() {
                             </p>
                           </li>
                         </Link>
-                        <Link to='/edit-email'>
-                          <li className='text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold '>
-                            <HiOutlineMail className='text-[28px]' />
-                            <p className='decoration-lightblue decoration-2 hover:underline hover:underline-offset-4'>
-                              Email preferences
-                            </p>
-                          </li>
-                        </Link>
-                        <Link to='/edit-email'>
-                          <li className='text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold '>
-                            <RxPencil1 className='text-[28px]' />
-                            <p className='decoration-lightblue decoration-2 hover:underline hover:underline-offset-4'>
-                              Change Email
-                            </p>
-                          </li>
-                        </Link>
-                        <Link to='/edit-username'>
-                          <li className='text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold '>
-                            <RxPencil1 className='text-[28px]' />
-                            <p className='decoration-lightblue decoration-2 hover:underline hover:underline-offset-4'>
-                              Change Password
-                            </p>
-                          </li>
-                        </Link>
                         <Link to='/sign-out'>
-                          <li className='text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold '>
+                          <li className='text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold text-red-500'>
                             <LuLogOut className='text-[28px]' />
                             <p className='decoration-lightblue decoration-2 hover:underline hover:underline-offset-4'>
                               Sign Out

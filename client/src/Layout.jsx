@@ -10,7 +10,7 @@ const Layout = () => {
 
   const paths = {
     headerOnly: ["/edit-username", "/edit-email", "/search"],
-    all: ["/", "/about-us", "/our-services"],
+    all: ["/", "/about-us", "/our-services", "/update-listings"],
     nothing: [
       "/settings",
       "/my-listings",

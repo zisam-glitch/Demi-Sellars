@@ -486,7 +486,7 @@ export default function Listing() {
                         </div>
                       </div>
 
-                      <div>
+                      <div className='pt-24'>
                         <StampDutyCalculator
                           regularPrice={listing.regularPrice}
                           discountPrice={listing.discountPrice}

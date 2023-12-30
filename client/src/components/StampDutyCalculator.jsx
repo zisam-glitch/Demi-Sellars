@@ -64,7 +64,6 @@ const StampDutyCalculator = ({ regularPrice, discountPrice }) => {
 
   return (
     <div className=' flex'>
-      <Sidebar />
       <div className='pt-8 pl-8'>
         <h1 className='text-2xl font-semibold pb-3'>Stamp Duty Calculator</h1>
         <p className='text-lg font-medium'>
