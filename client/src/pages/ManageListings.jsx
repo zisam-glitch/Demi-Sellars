@@ -27,38 +27,35 @@ const Tabs = () => {
     }
   }, [location.search]);
   return (
-    <div className="flex bg-footer">
-      <Sidebar />
-      <div className="w-[78%] h-screen">
-        <header className="bg-white py-3 px-10">
-          <form onSubmit={handleSubmit} className="flex  ">
-            <input
-              type="text"
-              required
-              placeholder="Search.."
-              className="bg-footer w-1/2 noout py-2 px-4 rounded-s-lg"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <button className="bg-footer pr-4 flex items-center rounded-e-lg">
-              <span className="">
-                <IoSearchOutline className=" text-lg" />
-              </span>
-            </button>
-          </form>
-        </header>
-        <div className="p-10">
-          
-          <div>
-            <div className=" flex gap-10 ">
-              <div className="w-full bg-white border-2 rounded-xl">
-                <div className="">
-                  <h1 className="text-xl p-5 border-b-2 font-semibold">Manage Listings</h1>
-                  <p className="text-base opacity-80 ">
-                  </p>
-                  <div className="scroll">
-                  <ManageListings/>
-                  </div>
+    <div className='w-[78%] bg-footer h-screen'>
+      <header className='bg-white py-3 px-10'>
+        <form onSubmit={handleSubmit} className='flex  '>
+          <input
+            type='text'
+            required
+            placeholder='Search..'
+            className='bg-footer w-1/2 noout py-2 px-4 rounded-s-lg'
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button className='bg-footer pr-4 flex items-center rounded-e-lg'>
+            <span className=''>
+              <IoSearchOutline className=' text-lg' />
+            </span>
+          </button>
+        </form>
+      </header>
+      <div className='p-10'>
+        <div>
+          <div className=' flex gap-10 '>
+            <div className='w-full bg-white border-2 rounded-xl'>
+              <div className=''>
+                <h1 className='text-xl p-5 border-b-2 font-semibold'>
+                  Manage Listings
+                </h1>
+                <p className='text-base opacity-80 '></p>
+                <div className='scroll'>
+                  <ManageListings />
                 </div>
               </div>
             </div>

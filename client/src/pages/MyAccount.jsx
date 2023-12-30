@@ -1,19 +1,13 @@
 import React from "react";
-import Sidebar from "../components/side-Bar";
 import Account from "../components/Account";
 
 const Tabs = () => {
   return (
-    <>
-      <div className=''>
-        <div className='md:flex block gap-10'>
-          <Sidebar />
-          <div className='md:shadow-lg mt-10 shadow-transparent rounded-xl bg-white scrolly w-full md:w-[75%]'>
-            <Account />
-          </div>
-        </div>
+    <div className='max-w-screen min-h-screen bg-footer pt-14'>
+      <div className='shadow-lg shadow-transparent border w-[90%] rounded-xl bg-white mb-10 mx-auto px-10'>
+        <Account />
       </div>
-    </>
+    </div>
   );
 };
 

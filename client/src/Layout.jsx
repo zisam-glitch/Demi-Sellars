@@ -9,35 +9,30 @@ const Layout = () => {
   const { currentUser } = useSelector((state) => state.user);
 
   const paths = {
-    headerOnly: ["/edit-username", "/edit-email", "/search"],
-    all: ["/", "/about-us", "/our-services", "/update-listings"],
-    nothing: [
-      "/settings",
-      "/my-listings",
-      "/create-listing",
+    headerOnly: [
+      "/edit-username",
+      "/edit-email",
+      "/search",
       "/my-account",
+      "/stamp",
+      "/dashboard/mortgage-calculator",
       "/listing/saved",
+      "/create-listing",
+      "/my-listings",
+      "/settings",
+      "/update-listings",
       "/sign-out",
       "/listing/requests",
-      "/stamp",
     ],
+    all: ["/", "/about-us", "/our-services"],
+    nothing: [],
   };
 
   const allowedAll = paths.all.includes(location.pathname);
-  const allowedHeader = paths.headerOnly.includes(location.pathname);
+  const allowedHeader =
+    paths.headerOnly.includes(location.pathname) ||
+    location.pathname.includes(`/update-listing`);
   const notAllowed = paths.nothing.includes(location.pathname);
-  const isMortgageCalculatorPage = location.pathname === "/mortgage-calculator";
-
-  if (isMortgageCalculatorPage && !currentUser) {
-    return (
-      <>
-        <Header />
-        <Suspense fallback={<h1>Loading...</h1>}>
-          <Outlet />
-        </Suspense>
-      </>
-    );
-  }
 
   if (allowedHeader) {
     return (

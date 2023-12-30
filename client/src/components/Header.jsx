@@ -53,15 +53,15 @@ export default function Header() {
       </header>
 
       <header className='hidden md:block shadow'>
-        <div className='flex justify-between items-center max-w-full mx-auto py-5 md:px-10 px-6'>
+        <div className='flex justify-between items-center max-w-full mx-auto py-5 md:px-10 px-2'>
           <Link to='/'>
-            <h1 className='font-bold text-xl md:text-2xl flex flex-wrap'>
+            <h1 className='font-bold text-xl flex flex-wrap'>
               <span className='text-darkblue'>Demi</span>
               <span className='text-lightblue'>Sellars</span>
             </h1>
           </Link>
 
-          <ul className='flex text-lg gap-6'>
+          <ul className='flex text-lg gap-4'>
             <NavLink
               to='/search?type=sale'
               exact
@@ -135,27 +135,27 @@ export default function Header() {
                   >
                     <div className='px-8 py-4 bg-purple'>
                       <ul>
-                        <Link to='/my-account'>
+                        <Link to='/my-account' onClick={onClose}>
                           <li className='text-2xl cursor-pointer pb-5 font-semibold decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 '>
                             Account
                           </li>
                         </Link>
-                        <Link to='/my-listings'>
+                        <Link to='/my-listings' onClick={onClose}>
                           <li className='text-2xl cursor-pointer py-5 font-semibold decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 '>
                             My listings
                           </li>
                         </Link>
-                        <Link to='/listing/saved'>
+                        <Link to='/listing/saved' onClick={onClose}>
                           <li className='text-2xl cursor-pointer py-5 font-semibold decoration-lightblue decoration-2 hover:underline hover:underline-offset-4'>
                             Saved listings
                           </li>
                         </Link>
-                        <Link to='/create-listing'>
+                        <Link to='/create-listing' onClick={onClose}>
                           <li className='text-2xl cursor-pointer py-5 font-semibold decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 '>
                             Create listing
                           </li>
                         </Link>
-                        <Link to='/update-listings'>
+                        <Link to='/update-listings' onClick={onClose}>
                           <li className='text-2xl cursor-pointer py-5 font-semibold decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 '>
                             Edit listing
                           </li>
@@ -164,7 +164,7 @@ export default function Header() {
                     </div>
                     <div className='px-8 py-4'>
                       <ul>
-                        <Link to='/my-account'>
+                        <Link to='/my-account' onClick={onClose}>
                           <li className='text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold '>
                             <RxAvatar className='text-[28px]' />
                             <p className='decoration-lightblue decoration-2 hover:underline hover:underline-offset-4'>
@@ -172,7 +172,7 @@ export default function Header() {
                             </p>
                           </li>
                         </Link>
-                        <Link to='/sign-out'>
+                        <Link to='/sign-out' onClick={onClose}>
                           <li className='text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold text-red-500'>
                             <LuLogOut className='text-[28px]' />
                             <p className='decoration-lightblue decoration-2 hover:underline hover:underline-offset-4'>

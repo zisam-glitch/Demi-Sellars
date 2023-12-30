@@ -179,7 +179,7 @@ export default function CreateListing() {
         </h1>
         <form
           onSubmit={handleSubmit}
-          className='flex flex-col sm:flex-row gap-4'
+          className='flex flex-col md:flex-row gap-4'
         >
           <div className='flex flex-col gap-4 flex-1'>
             <input
@@ -340,24 +340,22 @@ export default function CreateListing() {
                 The first image will be the cover (max 6)
               </span>
             </p>
-            <div className='flex gap-4'>
-              <input
-                onChange={(e) => setFiles(e.target.files)}
-                className='p-3 border border-gray-300 rounded w-full'
-                type='file'
-                id='images'
-                accept='image/*'
-                multiple
-              />
-              <button
-                type='button'
-                disabled={uploading}
-                onClick={handleImageSubmit}
-                className='p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80'
-              >
-                {uploading ? "Uploading..." : "Upload"}
-              </button>
-            </div>
+            <input
+              onChange={(e) => setFiles(e.target.files)}
+              className='p-3 border border-gray-300 rounded w-full'
+              type='file'
+              id='images'
+              accept='image/*'
+              multiple
+            />
+            <button
+              type='button'
+              disabled={uploading}
+              onClick={handleImageSubmit}
+              className='p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80'
+            >
+              {uploading ? "Uploading..." : "Upload"}
+            </button>
             <p className='text-red-700 text-sm'>
               {imageUploadError && imageUploadError}
             </p>

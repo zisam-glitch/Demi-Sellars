@@ -63,8 +63,8 @@ const StampDutyCalculator = ({ regularPrice, discountPrice }) => {
   };
 
   return (
-    <div className=' flex'>
-      <div className='pt-8 pl-8'>
+    <div className='w-full min-h-screen flex'>
+      <div className='pt-8 mt-4 px-8'>
         <h1 className='text-2xl font-semibold pb-3'>Stamp Duty Calculator</h1>
         <p className='text-lg font-medium'>
           We’ve updated our calculator to take into account the stamp duty cut
@@ -85,14 +85,16 @@ const StampDutyCalculator = ({ regularPrice, discountPrice }) => {
               />
             </div>
           </div>
-          <div className='flex flex-col gap-2 w-full md:w-[59%]'>
+          <div className='flex flex-col gap-2 max-w-full'>
             <label className='text-lg font-semibold'>i am....</label>
             <select
               value={buyerType}
               className='minimal w-full text-[19px] outline outline-1 focus:outline-lightblue rounded-[2px] px-3 py-3 outline-border'
               onChange={(e) => setBuyerType(e.target.value)}
             >
-              <option value='firstTimeBuyer'>First Time Buyer</option>
+              <option value='firstTimeBuyer' className='w-1/2'>
+                First Time Buyer
+              </option>
               <option value='movingHome'>
                 I am moving home and this is my only property
               </option>

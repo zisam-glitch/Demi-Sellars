@@ -19,8 +19,6 @@ import {
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 export default function Profile() {
   const fileRef = useRef(null);
@@ -251,7 +249,6 @@ export default function Profile() {
           </p>
         )}
       </div>
-      <Footer />
     </>
   );
 }

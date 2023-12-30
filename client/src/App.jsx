@@ -64,6 +64,10 @@ export default function App() {
               <Route path='/my-listings' element={<MyListing />} />
               <Route path='/listing/saved' element={<SavedListings />} />
               <Route path='/stamp' element={<StampDutyCalculator />} />
+              <Route
+                path='/dashboard/mortgage-calculator'
+                element={<Mortgage />}
+              />
             </Route>
           </Route>
           <Route path='/sign-in' element={<SignIn />} />

@@ -15,17 +15,11 @@ export default function Sidebar() {
   const { currentUser } = useSelector((state) => state.user);
 
   return (
-    <div className='min-w-[22%] md:block hidden bg-white border-r-2'>
-      <div className='h-screen flex flex-col justify-between  py-10'>
+    <div className='min-w-[20%] h-full bg-white border-r-2 border-t-2'>
+      <div className='h-screen flex flex-col justify-between pt-2 relative'>
         <div>
-          <div className='px-3 border-b-2  '>
-            <Link to='/'>
-              <h1 className='font-bold text-2xl px-4 md:text-2xl flex flex-wrap'>
-                <span className='text-darkblue'>Demi</span>
-                <span className='text-lightblue'>Sellars</span>
-              </h1>
-            </Link>
-            <div className='py-6'>
+          <div className='border-b-2'>
+            <div className=''>
               <nav className=' flex flex-col gap-1 ' id='sidebar'>
                 <NavLink
                   className='text-lg px-4 py-2'
@@ -33,7 +27,7 @@ export default function Sidebar() {
                   exact
                   activeClassName=''
                 >
-                  <span className='flex items-center gap-3'>
+                  <span className='flex items-center gap-3 text-sm md:text-lg'>
                     <IoHomeOutline className=' ' />
                     Dashboard
                   </span>
@@ -41,11 +35,11 @@ export default function Sidebar() {
 
                 <NavLink
                   className='text-lg px-4 py-2'
-                  to='/mortgage-calculator'
+                  to='/dashboard/mortgage-calculator'
                   exact
                   activeClassName=''
                 >
-                  <span className='flex items-center gap-3'>
+                  <span className='flex items-center gap-3 text-sm md:text-lg'>
                     <CiCalculator1 className='' />
                     Mortgage Calculator{" "}
                   </span>
@@ -56,7 +50,7 @@ export default function Sidebar() {
                   exact
                   activeClassName=''
                 >
-                  <span className='flex items-center gap-3'>
+                  <span className='flex items-center gap-3 text-sm md:text-lg'>
                     <TfiStamp className=' ' />
                     Stamp Duty Calculator{" "}
                   </span>
@@ -65,14 +59,14 @@ export default function Sidebar() {
             </div>
           </div>
           <div className=' py-6  '>
-            <nav className=' flex flex-col px-3 gap-0 ' id='sidebar'>
+            <nav className=' flex flex-col gap-0 ' id='sidebar'>
               <NavLink
                 className='text-lg px-4 py-2'
                 to='/listing/saved'
                 exact
                 activeClassName=''
               >
-                <span className='flex items-center gap-3'>
+                <span className='flex items-center gap-3 text-sm md:text-lg'>
                   <CiBookmark className='text-normal ' />
                   Saved listings
                 </span>
@@ -83,7 +77,7 @@ export default function Sidebar() {
                 exact
                 activeClassName=''
               >
-                <span className='flex items-center gap-3'>
+                <span className='flex items-center gap-3 text-sm md:text-lg'>
                   <IoCreateOutline className='text-lg' />
                   Create listing
                 </span>
@@ -94,7 +88,7 @@ export default function Sidebar() {
                 exact
                 activeClassName=''
               >
-                <span className='flex items-center gap-3'>
+                <span className='flex items-center gap-3 text-sm md:text-lg'>
                   <CiBoxList className='text-lg' />
                   My listings
                 </span>
@@ -106,7 +100,7 @@ export default function Sidebar() {
                   exact
                   activeClassName=''
                 >
-                  <span className='flex items-center gap-3'>
+                  <span className='flex items-center gap-3 text-sm md:text-lg'>
                     <MdManageSearch className='text-lg' />
                     Manage listings
                   </span>
@@ -117,15 +111,15 @@ export default function Sidebar() {
             </nav>
           </div>
         </div>
-        <div>
-          <nav className=' flex flex-col px-3 gap-0 ' id='sidebar'>
+        <div className='sticky bottom-0'>
+          <nav className=' flex flex-col gap-0 ' id='sidebar'>
             <NavLink
               className='text-lg px-4 py-2'
               to='/settings'
               exact
               activeClassName=''
             >
-              <span className='flex items-center gap-3'>
+              <span className='flex items-center gap-3 text-sm md:text-lg'>
                 <CiSettings className=' text-lg' />
                 Settings
               </span>
@@ -136,9 +130,9 @@ export default function Sidebar() {
               exact
               activeClassName=''
             >
-              <span className='flex items-center gap-3'>
+              <span className='flex items-center gap-3 text-sm md:text-lg'>
                 <IoIosLogOut className='' />
-                Sing Out
+                Sign Out
               </span>
             </NavLink>
           </nav>
