@@ -22,6 +22,7 @@ export default {
         background : "#f7f6f5",
         border: "#322744ad",
         bdr: "#0062d11a",
+        outline:"#00000036 "
       },
     },
     letterSpacing: {

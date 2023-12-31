@@ -14,7 +14,32 @@ import { ImCross } from "react-icons/im";
 
 export default function CreateListing() {
   const { currentUser } = useSelector((state) => state.user);
+  const [nameSuggestions, setNameSuggestions] = useState([]);
+  const API_KEY = "65722a1bee0a40b3844c6cfa8dd8b4b4"; // Replace with your OpenCage API key
   const navigate = useNavigate();
+
+  const handleInputChange = async (e) => {
+    const input = e.target.value;
+    setFormData({
+      ...formData,
+      name: input, // Update name in formData
+    });
+
+    // Fetch suggestions for the name field from OpenCage API
+    try {
+      const response = await fetch(
+        `https://api.opencagedata.com/geocode/v1/json?q=${input}&countrycode=GB&key=${API_KEY}`
+      );
+      const data = await response.json();
+
+      // Extract name suggestions from the API response
+      const names = data.results.map((result) => result.formatted);
+      setNameSuggestions(names);
+    } catch (error) {
+      console.error("Error fetching name suggestions:", error);
+      setNameSuggestions([]);
+    }
+  };
 
   const [files, setFiles] = useState([]);
   const [formData, setFormData] = useState({
@@ -253,7 +278,7 @@ export default function CreateListing() {
                 Basic information like name address etc..
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm">Property Details</label>
                 <input
@@ -280,17 +305,41 @@ export default function CreateListing() {
               </div>
               <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm"> Full Address</label>
-                <input
-                  type="text"
-                  placeholder="e.g Dudley Road, Finchley, London N3"
-                  className="outline outline-1 rounded p-3"
-                  id="name"
-                  maxLength="62"
-                  minLength="10"
-                  required
-                  onChange={handleChange}
-                  value={formData.name}
-                />
+                <div className="relative w-full">
+                  <input
+                    type="text"
+                    placeholder="e.g Ox, 1 Oxford Street, Belfast, BT1 3LA, United Kingdom"
+                    className="outline outline-1 w-full rounded p-3"
+                    id="name"
+                    maxLength="62"
+                    minLength="2"
+                    required
+                    onChange={handleInputChange}
+                    value={formData.name}
+                    list="nameSuggestions"
+                  />
+                  {nameSuggestions.length > 0 && (
+                    <div className="suggestions-container absolute bg-white border border-outline shadow-md rounded w-full mt-1">
+                      <ul className="suggestions-list">
+                        {nameSuggestions.map((suggestion, index) => (
+                          <li
+                            key={index}
+                            onClick={() => {
+                              setFormData({
+                                ...formData,
+                                name: suggestion,
+                              });
+                              setNameSuggestions([]); // Clear suggestions after selecting
+                            }}
+                            className="suggestion-item p-3 hover:bg-purple cursor-pointer"
+                          >
+                            {suggestion}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm"> Post Code</label>
@@ -346,7 +395,7 @@ export default function CreateListing() {
               </p>
             </div>
             <div className="flex flex-col gap-4 flex-1">
-              <div className=" grid grid-cols-2 gap-4">
+              <div className=" grid md:grid-cols-2 grid-cols-1 gap-4">
                 <div className="flex flex-col gap-2">
                   <label className="font-medium text-sm"> Property Type:</label>
                   <select
@@ -486,7 +535,7 @@ export default function CreateListing() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               <div>
                 <div className="flex flex-col gap-2">
                   <label className="font-medium text-sm">Description </label>
@@ -572,9 +621,11 @@ export default function CreateListing() {
                 Additional informations like Ground Rent Council Tax etc..
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               <div className="flex flex-col gap-2">
-                <label className="font-medium text-sm">Time remaining on lease</label>
+                <label className="font-medium text-sm">
+                  Time remaining on lease
+                </label>
                 <input
                   type="text"
                   placeholder="e.g 20 years"
@@ -587,52 +638,52 @@ export default function CreateListing() {
               </div>
               <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm">Ground Rent</label>
-              <input
-                type="text"
-                placeholder="e.g £90000 "
-                className="outline outline-1 rounded p-3"
-                id="groundRent"
-                required
-                onChange={handleChange}
-                value={formData.groundRent}
-              />
-               </div>
-               <div className="flex flex-col gap-2">
+                <input
+                  type="text"
+                  placeholder="e.g £90000 "
+                  className="outline outline-1 rounded p-3"
+                  id="groundRent"
+                  required
+                  onChange={handleChange}
+                  value={formData.groundRent}
+                />
+              </div>
+              <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm">Council Tax</label>
-              <input
-                type="text"
-                placeholder="e.g C"
-                className="outline outline-1 rounded p-3"
-                id="councilTax"
-                required
-                onChange={handleChange}
-                value={formData.councilTax}
-              />
-               </div>
-               <div className="flex flex-col gap-2">
+                <input
+                  type="text"
+                  placeholder="e.g C"
+                  className="outline outline-1 rounded p-3"
+                  id="councilTax"
+                  required
+                  onChange={handleChange}
+                  value={formData.councilTax}
+                />
+              </div>
+              <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm">Service Charge</label>
-              <input
-                type="text"
-                placeholder="e.g £700"
-                className="outline outline-1 rounded p-3"
-                id="serviceCharge"
-                required
-                onChange={handleChange}
-                value={formData.serviceCharge}
-              />
-               </div>
-               <div className="flex flex-col gap-2">
+                <input
+                  type="text"
+                  placeholder="e.g £700"
+                  className="outline outline-1 rounded p-3"
+                  id="serviceCharge"
+                  required
+                  onChange={handleChange}
+                  value={formData.serviceCharge}
+                />
+              </div>
+              <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm">Tenure</label>
-              <input
-                type="text"
-                placeholder="e.g Leasehold"
-                className="outline outline-1 rounded p-3"
-                id="tenure"
-                required
-                onChange={handleChange}
-                value={formData.tenure}
-              />
-               </div>
+                <input
+                  type="text"
+                  placeholder="e.g Leasehold"
+                  className="outline outline-1 rounded p-3"
+                  id="tenure"
+                  required
+                  onChange={handleChange}
+                  value={formData.tenure}
+                />
+              </div>
             </div>
           </>
         );
@@ -657,7 +708,7 @@ export default function CreateListing() {
           <button
             type="button"
             onClick={handleNextStep}
-            className={`py-3 w-[130px] bg-lightblue text-white rounded-lg  hover:opacity-95 ${
+            className={`py-3 w-[130px] bg-lightblue -z-10 text-white rounded-lg  hover:opacity-95 ${
               isNextButtonDisabled ? "opacity-80 cursor-not-allowed" : ""
             }`}
             disabled={isNextButtonDisabled}

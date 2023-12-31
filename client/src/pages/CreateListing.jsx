@@ -4,6 +4,9 @@ import { IoSearchOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CreateListing from "../components/CreateListing";
+import AccountHeader from "../components/AccountHeader";
+
+
 const Tabs = () => {
   const [openTab, setOpenTab] = React.useState(1);
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,10 +29,13 @@ const Tabs = () => {
     }
   }, [location.search]);
   return (
-    <div className="flex bg-footer">
-      <Sidebar />
-      <div className="w-[78%] h-screen">
-        <header className="bg-white py-3 px-10">
+    <div className="flex md:bg-footer bg-white">
+    <Sidebar />
+    <div className="md:w-[78%] w-full h-screen">
+      <div className="md:hidden block bg-footer">
+        <AccountHeader />
+      </div>
+      <header className="bg-white hidden md:block py-3 px-10">
           <form onSubmit={handleSubmit} className="flex  ">
             <input
               type="text"
@@ -46,7 +52,7 @@ const Tabs = () => {
             </button>
           </form>
         </header>
-        <div className="p-10">
+        <div className="md:p-10 p-6">
           <div className="flex gap-1 flex-col pb-4">
             <h1 className="text-3xl font-semibold">List your Property</h1>
             <p className="text-lg">List your Properties with demiselers </p>
@@ -66,7 +72,7 @@ const Tabs = () => {
                     >
                       <div className="py-5 flex gap-10 ">
                         <div className="w-full bg-white border-2 rounded-xl">
-                          <div className="p-5">
+                          <div className="md:p-5 p-3">
                             <CreateListing />
                           </div>
                         </div>

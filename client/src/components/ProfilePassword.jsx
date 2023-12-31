@@ -129,10 +129,10 @@ export default function Profile() {
               className="outline outline-1 rounded p-3"
             />
           </div>
-          <div className="flex justify-end">
+          <div className="flex md:justify-end w-full">
             <button
               disabled={loading || isUpdateButtonDisabled}
-              className="bg-lightblue w-1/2 text-white rounded-lg p-3 hover:opacity-95 disabled:opacity-50"
+              className="bg-lightblue md:w-1/2 w-full text-white rounded-lg p-3 hover:opacity-95 disabled:opacity-50"
             >
               {loading ? "Loading..." : "Update Password"}
             </button>

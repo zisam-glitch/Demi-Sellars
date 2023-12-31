@@ -107,17 +107,23 @@ export const getListings = async (req, res, next) => {
       type = { $in: ["sale", "rent"] };
     }
 
-    const searchTerm = req.query.searchTerm || "";
+    const searchTermWithCommas = req.query.searchTerm || "";
+    
+    // Remove commas from the search term
+    const searchTerm = searchTermWithCommas.replace(/,/g, '');
 
     const sort = req.query.sort || "createdAt";
 
     const order = req.query.order || "desc";
 
+    const searchTermsArray = searchTerm.split(/\s+/).filter(Boolean);
+    const regexSearchTerms = searchTermsArray.map(term => new RegExp(`\\b${term.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&")}\\b`, "i"));
+
     const listings = await Listing.find({
       $or: [
-        { name: { $regex: searchTerm, $options: "i" } },
-        { address: { $regex: searchTerm, $options: "i" } },
-        { postcode: { $regex: searchTerm, $options: "i" } }
+        { name: { $in: regexSearchTerms } },
+        { address: { $in: regexSearchTerms } },
+        { postcode: { $in: regexSearchTerms } },
       ],
       offer,
       furnished,
@@ -130,7 +136,7 @@ export const getListings = async (req, res, next) => {
       .skip(startIndex);
 
     if (req.user) {
-      // if user is logged in
+      // if the user is logged in
       const userId = req.user.id;
       const listingIds = listings.map((listing) => listing._id);
       const savedListings = await SavedListing.find({
@@ -139,7 +145,7 @@ export const getListings = async (req, res, next) => {
         isSaved: true,
       });
       const updatedListings = listings.map((listing) => ({
-        ...listing.toObject(), // Convert Mongoose document to plain JavaScript object
+        ...listing.toObject(), // Convert Mongoose document to a plain JavaScript object
         isSaved: savedListings.some((savedListing) =>
           savedListing.listing.equals(listing._id)
         ),
@@ -152,6 +158,9 @@ export const getListings = async (req, res, next) => {
     next(error);
   }
 };
+
+
+
 
 export const raiting = async (req, res, next) => {
   const { _id } = req.user;
@@ -351,7 +360,6 @@ export const approve = async (req, res, next) => {
     next(error);
   }
 };
-
 
 export const getSimilarListings = async (req, res, next) => {
   try {

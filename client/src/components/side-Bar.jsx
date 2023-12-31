@@ -42,7 +42,7 @@ export default function Sidebar() {
 
                 <NavLink
                   className="text-lg px-4 py-2"
-                  to="/create-listing"
+                  to="/mortgage-calculator"
                   exact
                   activeClassName=""
                 >
@@ -51,7 +51,7 @@ export default function Sidebar() {
                     Mortgage Calculator{" "}
                   </span>
                 </NavLink>
-                <NavLink
+                {/* <NavLink
                   className="text-lg px-4 py-2"
                   to="/my-listings"
                   exact
@@ -61,10 +61,10 @@ export default function Sidebar() {
                     <TfiStamp className=" " />
                     Stamp Duty Calculator{" "}
                   </span>
-                </NavLink>
+                </NavLink> */}
                 <NavLink
                   className="text-lg px-4 py-2"
-                  to="/edit-username"
+                  to="/contact-us"
                   exact
                   activeClassName=""
                 >

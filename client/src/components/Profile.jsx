@@ -242,7 +242,7 @@ export default function Profile() {
           
             <button
               disabled={loading}
-              className="bg-lightblue w-1/2  text-white rounded-lg p-3  hover:opacity-95 disabled:opacity-80"
+              className="bg-lightblue md:w-1/2 w-full  text-white rounded-lg p-3  hover:opacity-95 disabled:opacity-80"
             >
               {loading ? "Loading..." : "Save Changes"}
             </button>

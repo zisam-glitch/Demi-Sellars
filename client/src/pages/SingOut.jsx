@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SingOut from "../components/SingOut";
 import DelateAccount from "../components/DelateAccount";
+import AccountHeader from "../components/AccountHeader";
+
 
 const Tabs = () => {
   const [openTab, setOpenTab] = React.useState(1);
@@ -28,10 +30,13 @@ const Tabs = () => {
     }
   }, [location.search]);
   return (
-    <div className="flex bg-footer">
-      <Sidebar />
-      <div className="w-[78%] h-screen">
-        <header className="bg-white py-3 px-10">
+    <div className="flex md:bg-footer bg-white">
+    <Sidebar />
+    <div className="md:w-[78%] w-full h-screen">
+      <div className="md:hidden block bg-footer">
+        <AccountHeader />
+      </div>
+      <header className="bg-white hidden md:block py-3 px-10">
           <form onSubmit={handleSubmit} className="flex  ">
             <input
               type="text"
@@ -48,7 +53,7 @@ const Tabs = () => {
             </button>
           </form>
         </header>
-        <div className="p-10">
+        <div className="md:p-10 p-6">
           <div className="flex gap-1 flex-col pb-10">
             <h1 className="text-3xl font-semibold">Settings</h1>
             <p className="text-lg">
@@ -110,7 +115,7 @@ const Tabs = () => {
                     >
                       <div className="py-5 flex gap-10 ">
                         <div className="w-full bg-white border-2 rounded-xl">
-                          <div className="p-5 flex flex-col gap-2">
+                          <div className="md:p-5 p-3 flex flex-col gap-2">
                             <h1 className="text-xl pb-1 font-semibold">
                               Sing Out
                             </h1>
@@ -157,7 +162,7 @@ const Tabs = () => {
                                 promotions, tips.
                               </li>
                             </ul>
-                            <div className="flex gap-2">
+                            <div className="flex md:flex-row flex-col gap-2">
                               <p className="text-base opacity-80 ">
                               Remember, we appreciate your trust in us. Have a great day!
                               </p>
@@ -173,11 +178,11 @@ const Tabs = () => {
                     >
                       <div className="py-5 flex gap-10 ">
                         <div className="w-full bg-white border-2 rounded-xl">
-                          <div className="p-5">
+                          <div className="md:p-5 p-3">
                             <h1 className="text-xl pb-1 font-semibold">
                               Delete Account
                             </h1>
-                            <div className="flex gap-2">
+                            <div className="flex md:flex-row flex-col gap-2">
                               <p className="text-base opacity-80 ">
                                 The User will purmanently delated
                               </p>

@@ -5,8 +5,8 @@ import ApproveListing from "./ApproveListing"; // Make sure the path is correct
 export default function AdminListingItem({ listing }) {
   return (
     <div className="px-5 shadow-sm py-4 w-full ">
-      <div className="flex flex-row gap-8 w-full items-center justify-center ">
-        <div className="w-[20%]">
+      <div className="flex flex-row gap-4 md:gap-8 w-full items-center justify-center ">
+        <div className="md:w-[20%] w-[30%] ">
           <Link to={`/listing/${listing._id}`}>
             <img
               src={
@@ -19,7 +19,7 @@ export default function AdminListingItem({ listing }) {
           </Link>
         </div>
 
-        <div className=" flex flex-col gap-2 w-full">
+        <div className=" flex flex-col gap-2 md:w-full w-1/2">
           <Link className="flex flex-col gap-2 w-full" to={`/listing/${listing._id}`}>
             <p className="truncate text-lg font-semibold hover:underline capitalize">
               {listing.address}

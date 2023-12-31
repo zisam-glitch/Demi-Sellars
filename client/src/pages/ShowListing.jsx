@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import ShowListing from "../components/ShowListing";
 import AccountHeader from "../components/AccountHeader";
 
+
 const Tabs = () => {
   const [openTab, setOpenTab] = React.useState(1);
   const [searchTerm, setSearchTerm] = useState("");
@@ -29,13 +30,13 @@ const Tabs = () => {
   }, [location.search]);
   return (
     <div className="flex md:bg-footer bg-white">
-    <Sidebar />
-    <div className="md:w-[78%] w-full h-screen">
-      <div className="md:hidden block bg-footer">
-        <AccountHeader />
-      </div>
-      <header className="bg-white hidden md:block py-3 px-10">
-                  <form onSubmit={handleSubmit} className="flex  ">
+      <Sidebar />
+      <div className="md:w-[78%] w-full h-screen">
+        <div className="md:hidden block bg-footer">
+          <AccountHeader />
+        </div>
+        <header className="bg-white hidden md:block py-3 px-10">
+          <form onSubmit={handleSubmit} className="flex  ">
             <input
               type="text"
               required
@@ -51,15 +52,16 @@ const Tabs = () => {
             </button>
           </form>
         </header>
-        <div className="md:p-10 p-0">          
+        <div className="md:p-10 p-0">
           <div>
             <div className=" flex gap-10 ">
-            <div className="w-full bg-white md:border-2 border-0 md:rounded-xl">
+              <div className="w-full bg-white md:border-2 border-0 md:rounded-xl">
                 <div className="">
-                  <h1 className="text-xl p-5 border-b-2 font-semibold">My Listings</h1>
-                  <p className="text-base opacity-80 ">
-                  </p>
-                  <ShowListing/>
+                  <h1 className="text-xl p-5 border-b-2 font-semibold">
+                    My Listings
+                  </h1>
+                  <p className="text-base opacity-80 "></p>
+                  <ShowListing />
                 </div>
               </div>
             </div>

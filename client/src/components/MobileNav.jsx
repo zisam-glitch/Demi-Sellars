@@ -107,7 +107,7 @@ export default function Header() {
                       </NavLink>
                       {currentUser ? (
                         <NavLink
-                          to="/my-account"
+                          to="/settings"
                           exact
                           className="font-medium text-darkblue decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
                         >

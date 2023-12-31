@@ -14,11 +14,8 @@ import ManageListings from './pages/ManageListings';
 import Search from './pages/Search';
 import ContactUs from './pages/ContactUs';
 import Mortgage from './pages/Mortgage';
-import MyAccount from './pages/MyAccount'
 import SingOut from './pages/SingOut'
 import Settings from './pages/Settings'
-import EditUserName from './pages/EditUserName'
-import UpdateListingS from './pages/UpdateListings'
 
 
 
@@ -38,14 +35,12 @@ export default function App() {
         <Route path='/search' element={<Search />} />{/* done */}
         <Route path='/listing/:listingId' element={<Listing />} />{/* done */}
         <Route element={<PrivateRoute />}>
-          <Route path='/my-listings' element={<MyListing />} />
-          <Route path='/listing/saved' element={<SavedListings />} />
-          <Route path='/listing/requests' element={<ManageListings />} />
-          <Route path='/update-listings' element={<UpdateListingS />} />
-          <Route path='/sign-out' element={<SingOut />} />
-          <Route path='/settings' element={<Settings />} />
-          <Route path='/edit-username' element={<EditUserName />} />
-          <Route path='/create-listing' element={<CreateListing />} />
+          <Route path='/my-listings' element={<MyListing />} />{/* done */}
+          <Route path='/listing/saved' element={<SavedListings />} />{/* done */}
+          <Route path='/listing/requests' element={<ManageListings />} /> {/* done */}
+          <Route path='/sign-out' element={<SingOut />} />{/* done */}
+          <Route path='/settings' element={<Settings />} />{/* done */}
+          <Route path='/create-listing' element={<CreateListing />} />{/* done */}
           <Route
             path='/update-listing/:listingId'
             element={<UpdateListing />}

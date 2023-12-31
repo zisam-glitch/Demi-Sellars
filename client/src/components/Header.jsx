@@ -158,7 +158,7 @@ export default function Header() {
                             Create listing
                           </li>
                         </Link>
-                        <Link to="/update-listings">
+                        <Link to="/my-listings">
                           <li className="text-2xl cursor-pointer py-5 font-semibold decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 ">
                             Edit listing
                           </li>
@@ -167,7 +167,7 @@ export default function Header() {
                     </div>
                     <div className="px-8 py-4">
                       <ul>
-                        <Link to="/my-account">
+                        <Link to="/settings">
                           <li className="text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold ">
                             <RxAvatar className="text-[28px]" />
                             <p className="decoration-lightblue decoration-2 hover:underline hover:underline-offset-4">
@@ -175,7 +175,7 @@ export default function Header() {
                             </p>
                           </li>
                         </Link>
-                        <Link to="/edit-email">
+                        <Link to="/settings">
                           <li className="text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold ">
                             <HiOutlineMail className="text-[28px]" />
                             <p className="decoration-lightblue decoration-2 hover:underline hover:underline-offset-4">
@@ -183,7 +183,7 @@ export default function Header() {
                             </p>
                           </li>
                         </Link>
-                        <Link to="/edit-email">
+                        <Link to="/settings">
                           <li className="text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold ">
                             <RxPencil1 className="text-[28px]" />
                             <p className="decoration-lightblue decoration-2 hover:underline hover:underline-offset-4">
@@ -191,7 +191,7 @@ export default function Header() {
                             </p>
                           </li>
                         </Link>
-                        <Link to="/edit-username">
+                        <Link to="/settings">
                           <li className="text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold ">
                             <RxPencil1 className="text-[28px]" />
                             <p className="decoration-lightblue decoration-2 hover:underline hover:underline-offset-4">
@@ -199,7 +199,7 @@ export default function Header() {
                             </p>
                           </li>
                         </Link>
-                        <Link to="/sing-out">
+                        <Link to="/sign-out">
                           <li className="text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold ">
                             <LuLogOut className="text-[28px]" />
                             <p className="decoration-lightblue decoration-2 hover:underline hover:underline-offset-4">

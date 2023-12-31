@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Profile from "../components/Profile";
 import ProfilePassword from "../components/ProfilePassword";
+import AccountHeader from "../components/AccountHeader";
+
 const Tabs = () => {
   const [openTab, setOpenTab] = React.useState(1);
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,10 +29,13 @@ const Tabs = () => {
     }
   }, [location.search]);
   return (
-    <div className="flex bg-footer">
+    <div className="flex md:bg-footer bg-white">
       <Sidebar />
-      <div className="w-[78%] h-screen">
-        <header className="bg-white py-3 px-10">
+      <div className="md:w-[78%] w-full h-screen">
+        <div className="md:hidden block bg-footer">
+          <AccountHeader />
+        </div>
+        <header className="bg-white hidden md:block py-3 px-10">
           <form onSubmit={handleSubmit} className="flex  ">
             <input
               type="text"
@@ -47,7 +52,8 @@ const Tabs = () => {
             </button>
           </form>
         </header>
-        <div className="p-10">
+        <div className="md:p-10 p-6">
+          {" "}
           <div className="flex gap-1 flex-col pb-10">
             <h1 className="text-3xl font-semibold">Settings</h1>
             <p className="text-lg">
@@ -126,9 +132,9 @@ const Tabs = () => {
                       className={openTab === 1 ? "block" : "hidden"}
                       id="link1"
                     >
-                      <div className="py-5 flex gap-10 ">
-                        <div className="w-1/2 bg-white border-2 rounded-xl">
-                          <div className="p-5">
+                      <div className="py-5 flex flex-col md:flex-row gap-10 ">
+                        <div className="md:w-1/2 w-full bg-white border-2 rounded-xl">
+                          <div className="md:p-5 p-3">
                             <h1 className="text-xl pb-1 font-semibold">
                               Profile Settings
                             </h1>
@@ -139,8 +145,8 @@ const Tabs = () => {
                             <Profile />
                           </div>
                         </div>
-                        <div className="w-1/2 bg-white border-2 rounded-xl">
-                          <div className="p-5">
+                        <div className="md:w-1/2 w-full bg-white border-2 rounded-xl">
+                          <div className="md:p-5 p-3">
                             <h1 className="text-xl pb-1 font-semibold">
                               Update Password
                             </h1>
@@ -160,7 +166,7 @@ const Tabs = () => {
                         <div className="w-full bg-white border-2 rounded-xl">
                           <div className="p-5">
                             <h1 className="text-xl pb-1 font-semibold">
-                            Email preferences
+                              Email preferences
                             </h1>
                             <p className="text-base opacity-80 ">
                               There is nothing available at this moment
@@ -173,19 +179,22 @@ const Tabs = () => {
                     <div
                       className={openTab === 3 ? "block" : "hidden"}
                       id="link3"
-                    > <div className="py-5 flex gap-10 ">
-                    <div className="w-full bg-white border-2 rounded-xl">
-                      <div className="p-5">
-                        <h1 className="text-xl pb-1 font-semibold">
-                        Interrogations
-                        </h1>
-                        <p className="text-base opacity-80 ">
-                          There is nothing available at this moment
-                        </p>
-                        {/* <Profile /> */}
+                    >
+                      {" "}
+                      <div className="py-5 flex gap-10 ">
+                        <div className="w-full bg-white border-2 rounded-xl">
+                          <div className="p-5">
+                            <h1 className="text-xl pb-1 font-semibold">
+                              Interrogations
+                            </h1>
+                            <p className="text-base opacity-80 ">
+                              There is nothing available at this moment
+                            </p>
+                            {/* <Profile /> */}
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div></div>
                   </div>
                 </div>
               </div>

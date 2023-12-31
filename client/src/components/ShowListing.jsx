@@ -190,7 +190,7 @@ export default function Profile() {
                 key={listing._id}
                 className=" shadow-sm rounded-lg px-5 py-4 flex justify-between items-center gap-[4%] md:gap-8"
               >
-                <Link className="w-[15%]" to={`/listing/${listing._id}`}>
+                <Link className="md:w-[15%] w-[20%]" to={`/listing/${listing._id}`}>
                   <img
                     src={listing.imageUrls[0]}
                     alt="listing cover"

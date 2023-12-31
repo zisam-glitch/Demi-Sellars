@@ -4,6 +4,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ManageListings from "../components/ManageListings";
+import AccountHeader from "../components/AccountHeader";
 
 const Tabs = () => {
   const [openTab, setOpenTab] = React.useState(1);
@@ -27,10 +28,13 @@ const Tabs = () => {
     }
   }, [location.search]);
   return (
-    <div className="flex bg-footer">
+    <div className="flex md:bg-footer bg-white">
       <Sidebar />
-      <div className="w-[78%] h-screen">
-        <header className="bg-white py-3 px-10">
+      <div className="md:w-[78%] w-full h-screen">
+        <div className="md:hidden block bg-footer">
+          <AccountHeader />
+        </div>
+        <header className="bg-white hidden md:block py-3 px-10">
           <form onSubmit={handleSubmit} className="flex  ">
             <input
               type="text"
@@ -47,17 +51,17 @@ const Tabs = () => {
             </button>
           </form>
         </header>
-        <div className="p-10">
-          
+        <div className="md:p-10 p-0">
           <div>
             <div className=" flex gap-10 ">
-              <div className="w-full bg-white border-2 rounded-xl">
+            <div className="w-full bg-white md:border-2 border-0 md:rounded-xl">
                 <div className="">
-                  <h1 className="text-xl p-5 border-b-2 font-semibold">Manage Listings</h1>
-                  <p className="text-base opacity-80 ">
-                  </p>
+                  <h1 className="text-xl p-5 border-b-2 font-semibold">
+                    Manage Listings
+                  </h1>
+                  <p className="text-base opacity-80 "></p>
                   <div className="scroll">
-                  <ManageListings/>
+                    <ManageListings />
                   </div>
                 </div>
               </div>
