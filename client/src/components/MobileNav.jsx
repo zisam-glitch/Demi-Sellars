@@ -60,9 +60,9 @@ export default function Header() {
                 open={open}
                 className="w-20"
               >
-                <div className="px-8 bg-purple h-full py-4">
+                <div className="px-8 bg-purple h-full ">
                   <div className="bg-purple ">
-                    <ul className="flex flex-col text-2xl gap-6">
+                    <ul className="flex flex-col text-[22px] gap-4">
                       <NavLink
                         to="/search?type=sale"
                         exact

@@ -248,6 +248,10 @@ select.sort:focus {
   background: white;
 }
 
+.ant-drawer-body{
+  background-color: #f0e9fd;
+}
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: blue;

@@ -48,6 +48,10 @@ export default function Header() {
                 <span className="text-darkblue">Demi</span>
                 <span className="text-lightblue">Sellars</span>
               </h1>
+              <h1 className="font-bold text-2xl md:text-2xl flex flex-wrap p-40">
+                <span className="text-darkblue">D</span>
+                <span className="text-lightblue">Sellars</span>
+              </h1>
             </Link>
             <div>
               <MobileNav />
@@ -158,57 +162,14 @@ export default function Header() {
                             Create listing
                           </li>
                         </Link>
-                        <Link to="/my-listings">
-                          <li className="text-2xl cursor-pointer py-5 font-semibold decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 ">
-                            Edit listing
-                          </li>
-                        </Link>
-                      </ul>
-                    </div>
-                    <div className="px-8 py-4">
-                      <ul>
-                        <Link to="/settings">
-                          <li className="text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold ">
-                            <RxAvatar className="text-[28px]" />
-                            <p className="decoration-lightblue decoration-2 hover:underline hover:underline-offset-4">
-                              Profile
-                            </p>
-                          </li>
-                        </Link>
-                        <Link to="/settings">
-                          <li className="text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold ">
-                            <HiOutlineMail className="text-[28px]" />
-                            <p className="decoration-lightblue decoration-2 hover:underline hover:underline-offset-4">
-                              Email preferences
-                            </p>
-                          </li>
-                        </Link>
-                        <Link to="/settings">
-                          <li className="text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold ">
-                            <RxPencil1 className="text-[28px]" />
-                            <p className="decoration-lightblue decoration-2 hover:underline hover:underline-offset-4">
-                              Change Email
-                            </p>
-                          </li>
-                        </Link>
-                        <Link to="/settings">
-                          <li className="text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold ">
-                            <RxPencil1 className="text-[28px]" />
-                            <p className="decoration-lightblue decoration-2 hover:underline hover:underline-offset-4">
-                              Change Password
-                            </p>
-                          </li>
-                        </Link>
                         <Link to="/sign-out">
-                          <li className="text-lg cursor-pointer flex gap-3 items-center py-5 font-semibold ">
-                            <LuLogOut className="text-[28px]" />
-                            <p className="decoration-lightblue decoration-2 hover:underline hover:underline-offset-4">
-                              Sign Out
-                            </p>
+                          <li className="text-2xl cursor-pointer py-5 font-semibold decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 ">
+                          Sign Out
                           </li>
                         </Link>
                       </ul>
                     </div>
+                    
                   </Drawer>
                 </div>
               </li>

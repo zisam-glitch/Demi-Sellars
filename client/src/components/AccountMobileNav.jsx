@@ -60,9 +60,9 @@ export default function Header() {
                 open={open}
                 className="w-20"
               >
-                <div className="px-8 bg-purple h-full py-4">
+                <div className="px-8 bg-purple h-full ">
                   <div className="bg-purple ">
-                    <ul className="flex flex-col text-2xl gap-6">
+                    <ul className="flex flex-col text-[22px] gap-4">
                       <NavLink
                         to="/"
                         exact
@@ -71,33 +71,28 @@ export default function Header() {
                         Home
                       </NavLink>
                       <NavLink
-                        to="/mortgage-calculator"
+                        to="/my-listings"
                         exact
                         className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
                       >
-                        Mortgage Calculator
+                       My listings
                       </NavLink>
+                      
                       <NavLink
-                        to="/search"
+                        to="/listing/saved"
                         exact
                         className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
                       >
                         Saved listings
                       </NavLink>
                       <NavLink
-                        to="/Saved listings"
+                        to="/create-listing"
                         exact
                         className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
                       >
                         Create listing
                       </NavLink>
-                      <NavLink
-                        to="/create-listing"
-                        exact
-                        className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
-                      >
-                       My listings
-                      </NavLink>
+                    
                       {currentUser && currentUser.role === "admin" ? (
                         <NavLink
                           to="/listing/requests"
@@ -110,11 +105,11 @@ export default function Header() {
                         ""
                       )}
                       <NavLink
-                        to="/my-listings"
+                        to="/mortgage-calculator"
                         exact
                         className="font-medium text-black decoration-lightblue decoration-2 hover:underline hover:underline-offset-4 py-3"
                       >
-                        Contact Us
+                        Mortgage Calculator
                       </NavLink>
                       {currentUser ? (
                         <NavLink
