@@ -19,8 +19,6 @@ import {
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 export default function Profile() {
   const fileRef = useRef(null);
@@ -178,62 +176,63 @@ export default function Profile() {
 
   return (
     <>
-    <Header />
-      <div className="p-20">
-        <p className="text-red-700 mt-5">
+      <div className='p-20'>
+        <p className='text-red-700 mt-5'>
           {showListingsError ? "Error showing listings" : ""}
         </p>
 
         {userListings && userListings.length > 0 ? (
-          <div className="flex flex-col gap-4">
-            <h1 className="text-3xl font-semibold">Update Listings</h1>
+          <div className='flex flex-col gap-4'>
+            <h1 className='text-3xl font-semibold'>Update Listings</h1>
             {userListings.map((listing) => (
               <div
                 key={listing._id}
-                className=" shadow-sm rounded-lg px-3 py-5 flex justify-between items-center gap-8"
+                className=' shadow-sm rounded-lg px-3 py-5 flex justify-between items-center gap-8'
               >
                 <Link to={`/listing/${listing._id}`}>
                   <img
                     src={listing.imageUrls[0]}
-                    alt="listing cover"
-                    className="h-28 w-40 object-contain"
+                    alt='listing cover'
+                    className='h-28 w-40 object-contain'
                   />
                 </Link>
                 <Link
-                  className="text-slate-700 font-semibold   truncate flex-1"
+                  className='text-slate-700 font-semibold   truncate flex-1'
                   to={`/listing/${listing._id}`}
                 >
-                  <div className="flex gap-2">
-                    <p className="text-lg font-semibold pb-2 hover:underline capitalize">
+                  <div className='flex gap-2'>
+                    <p className='text-lg font-semibold pb-2 hover:underline capitalize'>
                       {listing.address}
                     </p>
                     <div>
                       {!listing.approved ? (
-                        <p className="text-lg font-semibold text-lighttext ">
+                        <p className='text-lg font-semibold text-lighttext '>
                           (Pending)
                         </p>
                       ) : (
-                        <p className="text-lg font-semibold text-lightblue">
+                        <p className='text-lg font-semibold text-lightblue'>
                           (Approved)
                         </p>
                       )}
                     </div>
                   </div>
-                  <p className="pb-2 capitalize">{listing.name}</p>
-                  <p className="text-base pr-12 mb-2 text-gray-600 line-clamp-1">
+                  <p className='pb-2 capitalize'>{listing.name}</p>
+                  <p className='text-base pr-12 mb-2 text-gray-600 line-clamp-1'>
                     <div
                       dangerouslySetInnerHTML={{ __html: listing.description }}
                     />
                   </p>
                 </Link>
 
-                <div className="flex flex-col item-center">
+                <div className='flex flex-col item-center'>
                   <Link to={`/update-listing/${listing._id}`}>
-                    <button className="text-lightblue uppercase pb-2">Edit</button>
+                    <button className='text-lightblue uppercase pb-2'>
+                      Edit
+                    </button>
                   </Link>
                   <button
                     onClick={() => handleListingDelete(listing._id)}
-                    className="text-red-700 uppercase"
+                    className='text-red-700 uppercase'
                   >
                     Delete
                   </button>
@@ -242,12 +241,14 @@ export default function Profile() {
             ))}
           </div>
         ) : (
-          <p className="text-lg justify-center items-center font-semibold flex flex-col">
-            You have no listings. <Link className="text-lightblue" to="/create-listing">Create one now!</Link>
+          <p className='text-lg justify-center items-center font-semibold flex flex-col'>
+            You have no listings.{" "}
+            <Link className='text-lightblue' to='/create-listing'>
+              Create one now!
+            </Link>
           </p>
         )}
       </div>
-      <Footer/>
     </>
   );
 }

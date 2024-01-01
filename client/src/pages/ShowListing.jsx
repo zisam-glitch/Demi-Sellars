@@ -1,5 +1,4 @@
 import React from "react";
-import Sidebar from "../components/side-Bar";
 import { IoSearchOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -29,6 +28,7 @@ const Tabs = () => {
     }
   }, [location.search]);
   return (
+<<<<<<< HEAD
     <div className="flex md:bg-footer bg-white">
       <Sidebar />
       <div className="md:w-[78%] w-full h-screen">
@@ -63,6 +63,36 @@ const Tabs = () => {
                   <p className="text-base opacity-80 "></p>
                   <ShowListing />
                 </div>
+=======
+    <div className=' md:bg-footer bg-white w-full h-screen'>
+      <header className='bg-white hidden md:block py-3 px-10'>
+        <form onSubmit={handleSubmit} className='flex  '>
+          <input
+            type='text'
+            required
+            placeholder='Search..'
+            className='bg-footer w-1/2 noout py-2 px-4 rounded-s-lg'
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button className='bg-footer pr-4 flex items-center rounded-e-lg'>
+            <span className=''>
+              <IoSearchOutline className=' text-lg' />
+            </span>
+          </button>
+        </form>
+      </header>
+      <div className='md:p-10 p-0'>
+        <div>
+          <div className=' flex gap-10 '>
+            <div className='w-full bg-white md:border-2 border-0 md:rounded-xl'>
+              <div className=''>
+                <h1 className='text-xl p-5 border-b-2 font-semibold'>
+                  My Listings
+                </h1>
+                <p className='text-base opacity-80 '></p>
+                <ShowListing />
+>>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
               </div>
             </div>
           </div>

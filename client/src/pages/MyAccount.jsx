@@ -1,22 +1,13 @@
 import React from "react";
-import Header from "../components/Header";
-import Sidebar from "../components/sidebar";
-import Account from '../components/Account'
+import Account from "../components/Account";
 
 const Tabs = () => {
-
   return (
-    <>
-      <Header />
-      <div className="md:px-20 px-0 md:py-20 py-0 bg-white  md:bg-footer">
-        <div className="md:flex block gap-[5%]">
-          <Sidebar />
-          <div className=" md:shadow-lg shadow-transparent rounded-xl bg-white scrolly w-full md:w-[75%]">
-            <Account />
-          </div>
-        </div>
+    <div className='max-w-screen min-h-screen md:bg-footer md:pt-14 pt-4'>
+      <div className='md:shadow-lg shadow-transparent md:border md:w-[90%] w-full  rounded-xl bg-white mb-10 mx-auto md:px-10'>
+        <Account />
       </div>
-    </>
+    </div>
   );
 };
 

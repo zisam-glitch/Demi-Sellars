@@ -178,75 +178,74 @@ export default function Profile() {
 
   return (
     <>
-      <div className="md:p-20 p-6">
+      <div className='p-6'>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-6 items-start"
+          className='flex flex-col gap-6 items-start'
         >
-          <div className="flex justify-between w-full items-center">
-            <h1 className="text-3xl font-semibold my-7">Profile</h1>
+          <div className='flex justify-between w-full items-center'>
+            <h1 className='text-3xl font-semibold my-7'>Profile</h1>
 
             <input
               onChange={(e) => setFile(e.target.files[0])}
-              type="file"
+              type='file'
               ref={fileRef}
               hidden
-              accept="image/*"
+              accept='image/*'
             />
             <img
               onClick={() => fileRef.current.click()}
               src={formData.avatar || currentUser.avatar}
-              alt="profile"
-              className="rounded-full h-20 w-20 object-cover cursor-pointer mt-2"
+              alt='profile'
+              className='rounded-full h-20 w-20 object-cover cursor-pointer mt-2'
             />
           </div>
-          <p className="text-sm self-center">
+          <p className='text-sm self-center'>
             {fileUploadError ? (
-              <span className="text-red-700">
+              <span className='text-red-700'>
                 Error Image upload (image must be less than 2 mb)
               </span>
             ) : filePerc > 0 && filePerc < 100 ? (
-              <span className="text-slate-700">{`Uploading ${filePerc}%`}</span>
+              <span className='text-slate-700'>{`Uploading ${filePerc}%`}</span>
             ) : filePerc === 100 ? (
-              <span className="text-green-700">
+              <span className='text-green-700'>
                 Image successfully uploaded!
               </span>
             ) : (
               ""
             )}
           </p>
-          <div className="flex flex-col w-full">
-            <div className="flex justify-between pb-4">
-              <p className="text-lg">
+          <div className='flex flex-col w-full'>
+            <div className='flex justify-between pb-4'>
+              <p className='text-lg'>
                 <b>Username :{""}</b> {""}
                 {currentUser.username}
               </p>
-              <Link to="/edit-username">
-                <p className="text-lg text-lightblue hover:underline decoration-lightblue">
-                  Eidt
+              <Link to='/edit-username'>
+                <p className='text-lg text-lightblue hover:underline decoration-lightblue'>
+                  Edit
                 </p>
               </Link>
             </div>
-            <div className="flex justify-between pb-4">
-              <p className="text-lg">
+            <div className='flex justify-between pb-4'>
+              <p className='text-lg'>
                 <b>Email :{""}</b> {""}
                 {currentUser.email}
               </p>
-              <Link to="/edit-email">
-                <p className="text-lg text-lightblue hover:underline decoration-lightblue">
-                  Eidt
+              <Link to='/edit-email'>
+                <p className='text-lg text-lightblue hover:underline decoration-lightblue'>
+                  Edit
                 </p>
               </Link>
             </div>
-            <div className="flex justify-between pb-4">
-              <p className="text-lg">
-                <b>Paddword :{""}</b> xxxxxxxx {""}
-                
+            <div className='flex justify-between pb-4'>
+              <p className='text-lg'>
+                <b>Password :{""}</b> xxxxxxxx {""}
               </p>
               <Link>
                 <p
                   onClick={handleEditPassword}
-                  className="text-lg text-lightblue hover:underline decoration-lightblue"
+                  className='text-lg text-lightblue hover:underline decoration-lightblue'
                 >
                   {editPassword ? "Cancel " : "Edit "}
                 </p>
@@ -254,37 +253,35 @@ export default function Profile() {
             </div>
           </div>
 
-         
-          <div className="grid grid-cols-2 w-full gap-6">
-          
+          <div className='flex flex-col md:flex-row flex-wrap items-start w-full'>
             {editPassword && (
               <>
-                <div className="flex flex-col gap-3">
-                  <label className="font-medium text-base">Password</label>
+                <div className='flex flex-col gap-3 md:w-1/2 w-full pr-4'>
+                  <label className='font-medium text-base'>Password</label>
                   <input
-                    type="password"
-                    placeholder="password"
+                    type='password'
+                    placeholder='password'
                     onChange={handleChange}
-                    id="password"
-                    className="outline outline-1 rounded p-3"
+                    id='password'
+                    className='outline outline-1 rounded p-3'
                   />
                 </div>
-                <div className="flex flex-col gap-3">
-                  <label className="font-medium text-base">
+                <div className='flex flex-col gap-3 w-full md:w-1/2'>
+                  <label className='font-medium text-base'>
                     Confirm Password
                   </label>
                   <input
-                    type="password"
-                    placeholder="confirm password"
+                    type='password'
+                    placeholder='confirm password'
                     onChange={handleConfirmPasswordChange}
-                    id="confirmPassword"
-                    className="outline outline-1 rounded p-3"
+                    id='confirmPassword'
+                    className='outline outline-1 rounded p-3'
                   />
                 </div>
-                <div className="flex flex-col gap-3">
+                <div className='flex flex-col gap-3 mt-4'>
                   <button
                     disabled={loading}
-                    className="bg-lightblue text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
+                    className='bg-lightblue text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
                   >
                     {loading ? "Loading..." : "Update"}
                   </button>
@@ -293,13 +290,13 @@ export default function Profile() {
             )}
           </div>
 
-          {passwordMismatchError && (
-            <p className="text-red-700">Passwords do not match.</p>
+          {passwordMismatchError && editPassword && (
+            <p className='text-red-700'>Passwords do not match.</p>
           )}
         </form>
 
-        <p className="text-red-700 mt-5">{error ? error : ""}</p>
-        <p className="text-green-700 mt-5">
+        <p className='text-red-700 mt-5'>{error ? error : ""}</p>
+        <p className='text-green-700 mt-5'>
           {updateSuccess ? "User is updated successfully!" : ""}
         </p>
       </div>

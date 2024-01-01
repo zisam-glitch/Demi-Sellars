@@ -273,36 +273,43 @@ export default function CreateListing() {
         return (
           <>
             <div>
-              <h2 className="text-xl pb-1 font-semibold">Basic information</h2>
-              <p className="text-base opacity-80 ">
+              <h2 className='text-xl pb-1 font-semibold'>Basic information</h2>
+              <p className='text-base opacity-80 '>
                 Basic information like name address etc..
               </p>
             </div>
+<<<<<<< HEAD
             <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm">Property Details</label>
+=======
+            <div className='flex flex-col md:flex-row flex-wrap justify-between'>
+              <div className='flex flex-col gap-2 md:w-1/2 pr-4'>
+                <label className='font-medium text-sm'>Property Details</label>
+>>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
                 <input
-                  type="text"
-                  placeholder="e.g 2 bed flat for sale"
-                  className="outline outline-1 rounded p-3"
-                  id="address"
+                  type='text'
+                  placeholder='e.g 2 bed flat for sale'
+                  className='outline outline-1 rounded p-3'
+                  id='address'
                   required
                   onChange={handleChange}
                   value={formData.address}
                 />{" "}
               </div>
-              <div className="flex flex-col gap-2">
-                <label className="font-medium text-sm">Owner Full Name</label>
+              <div className='flex flex-col gap-2 md:w-1/2'>
+                <label className='font-medium text-sm'>Owner Full Name</label>
                 <input
-                  type="text"
-                  placeholder="e.g Jamie Berry"
-                  className="outline outline-1 rounded p-3"
-                  id="ownerName"
+                  type='text'
+                  placeholder='e.g Jamie Berry'
+                  className='outline outline-1 rounded p-3'
+                  id='ownerName'
                   required
                   onChange={handleChange}
                   value={formData.ownerName}
                 />
               </div>
+<<<<<<< HEAD
               <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm"> Full Address</label>
                 <div className="relative w-full">
@@ -340,43 +347,58 @@ export default function CreateListing() {
                     </div>
                   )}
                 </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="font-medium text-sm"> Post Code</label>
+=======
+              <div className='flex flex-col gap-2 md:w-1/2 pr-4'>
+                <label className='font-medium text-sm'> Full Address</label>
                 <input
-                  type="text"
-                  placeholder="e.g KA5 0BW"
-                  className="outline outline-1 rounded p-3"
-                  pattern="^[A-Z]{1,2}[0-9R][0-9A-Z]? [0-9][ABD-HJLNP-UW-Z]{2}$"
-                  id="postcode"
+                  type='text'
+                  placeholder='e.g Dudley Road, Finchley, London N3'
+                  className='outline outline-1 rounded p-3'
+                  id='name'
+                  maxLength='62'
+                  minLength='10'
+                  required
+                  onChange={handleChange}
+                  value={formData.name}
+                />
+>>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
+              </div>
+              <div className='flex flex-col gap-2 md:w-1/2'>
+                <label className='font-medium text-sm'> Post Code</label>
+                <input
+                  type='text'
+                  placeholder='e.g KA5 0BW'
+                  className='outline outline-1 rounded p-3'
+                  pattern='^[A-Z]{1,2}[0-9R][0-9A-Z]? [0-9][ABD-HJLNP-UW-Z]{2}$'
+                  id='postcode'
                   required
                   onChange={handleChange}
                   value={formData.postcode}
                 />
               </div>
-              <div className="flex flex-col gap-2">
-                <label className="font-medium text-sm">Email</label>
+              <div className='flex flex-col gap-2 md:w-1/2 pr-4'>
+                <label className='font-medium text-sm'>Email</label>
                 <input
-                  type="email"
+                  type='email'
                   placeholder={currentUser.email}
-                  className="outline outline-1 rounded p-3"
-                  id="email"
+                  className='outline outline-1 rounded p-3'
+                  id='email'
                   required
                   onChange={handleChange}
                   value={formData.email}
                 />
               </div>
-              <div className="flex flex-col gap-2">
-                <label className="font-medium text-sm">Phone number</label>
-                <div className="outline flex outline-1 items-center foc pl-3  rounded ">
-                  <span className="w-[8%]">+44</span>
+              <div className='flex flex-col gap-2 md:w-1/2'>
+                <label className='font-medium text-sm'>Phone number</label>
+                <div className='outline flex outline-1 items-center foc pl-3  rounded '>
+                  <span className='w-[14%]'>+44</span>
                   <input
-                    type="number"
-                    placeholder="078 0439 2132"
-                    className="outline-0 py-3 w-[92%]"
-                    id="phone"
+                    type='number'
+                    placeholder='078 0439 2132'
+                    className='outline-0 py-3 w-[92%]'
+                    id='phone'
                     required
-                    pattern="[0-9]{3}[0-9]{2}[0-9]{3}"
+                    pattern='[0-9]{3}[0-9]{2}[0-9]{3}'
                     onChange={handleChange}
                     value={formData.phone}
                   />
@@ -389,98 +411,105 @@ export default function CreateListing() {
         return (
           <>
             <div>
-              <h2 className="text-xl pb-1 font-semibold">Property Type</h2>
-              <p className="text-base opacity-80 ">
+              <h2 className='text-xl pb-1 font-semibold'>Property Type</h2>
+              <p className='text-base opacity-80 '>
                 Property type like type pricr etc..
               </p>
             </div>
+<<<<<<< HEAD
             <div className="flex flex-col gap-4 flex-1">
               <div className=" grid md:grid-cols-2 grid-cols-1 gap-4">
                 <div className="flex flex-col gap-2">
                   <label className="font-medium text-sm"> Property Type:</label>
+=======
+            <div className='flex flex-col gap-4 flex-1'>
+              <div className=' grid grid-cols-2 gap-4'>
+                <div className='flex flex-col gap-2'>
+                  <label className='font-medium text-sm'> Property Type:</label>
+>>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
                   <select
-                    id="type"
-                    className="outline sec outline-1 rounded p-3"
+                    id='type'
+                    className='outline sec outline-1 rounded p-3'
                     onChange={handleChange}
                     value={formData.type}
                   >
-                    <option value="sale">Sell</option>
-                    <option value="rent">Rent</option>
+                    <option value='sale'>Sell</option>
+                    <option value='rent'>Rent</option>
                   </select>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-medium text-sm"> Beds</label>
+                <div className='flex flex-col gap-2'>
+                  <label className='font-medium text-sm'> Beds</label>
                   <input
-                    type="number"
-                    id="bedrooms"
-                    min="1"
-                    max="50"
+                    type='number'
+                    id='bedrooms'
+                    min='1'
+                    max='50'
                     required
-                    className="outline outline-1 rounded p-3"
+                    className='outline outline-1 rounded p-3'
                     onChange={handleChange}
                     value={formData.bedrooms}
                   />
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-medium text-sm"> Reception</label>
+                <div className='flex flex-col gap-2'>
+                  <label className='font-medium text-sm'> Reception</label>
                   <input
-                    type="number"
-                    id="reception"
-                    min="0"
-                    max="50"
+                    type='number'
+                    id='reception'
+                    min='0'
+                    max='50'
                     required
-                    className="outline outline-1 rounded p-3"
+                    className='outline outline-1 rounded p-3'
                     onChange={handleChange}
                     value={formData.reception}
                   />
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-medium text-sm"> Baths</label>
+                <div className='flex flex-col gap-2'>
+                  <label className='font-medium text-sm'> Baths</label>
                   <input
-                    type="number"
-                    id="bathrooms"
-                    min="1"
-                    max="50"
+                    type='number'
+                    id='bathrooms'
+                    min='1'
+                    max='50'
                     required
-                    className="outline outline-1 rounded p-3"
+                    className='outline outline-1 rounded p-3'
                     onChange={handleChange}
                     value={formData.bathrooms}
                   />
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-medium text-sm">
+                <div className='flex flex-col gap-2'>
+                  <label className='font-medium text-sm'>
                     {" "}
                     Regular price{" "}
                     {formData.type === "rent" && (
-                      <span className="text-xs">($ / month)</span>
+                      <span className='text-xs'>($ / month)</span>
                     )}
                   </label>
                   <input
-                    type="number"
-                    id="regularPrice"
-                    min="50"
-                    max="10000000"
+                    type='number'
+                    id='regularPrice'
+                    min='50'
+                    max='10000000'
                     required
-                    className="p-3 border border-gray-300 rounded-lg"
+                    className='p-3 border border-gray-300 rounded-lg'
                     onChange={handleChange}
                     value={formData.regularPrice}
                   />
                 </div>
                 {formData.offer && (
-                  <div className="flex flex-col gap-2">
-                    <label className="font-medium text-sm">
+                  <div className='flex flex-col gap-2'>
+                    <label className='font-medium text-sm'>
                       Discounted price{" "}
                       {formData.type === "rent" && (
-                        <span className="text-xs">($ / month)</span>
+                        <span className='text-xs'>($ / month)</span>
                       )}
                     </label>
                     <input
-                      type="number"
-                      id="discountPrice"
-                      min="0"
-                      max="10000000"
+                      type='number'
+                      id='discountPrice'
+                      min='0'
+                      max='10000000'
                       required
-                      className="p-3 border border-gray-300 rounded-lg"
+                      className='p-3 border border-gray-300 rounded-lg'
                       onChange={handleChange}
                       value={formData.discountPrice}
                     />
@@ -488,32 +517,32 @@ export default function CreateListing() {
                 )}
               </div>
 
-              <div className="flex  pt-4 flex-wrap gap-6">
-                <div className="flex gap-2">
+              <div className='flex  pt-4 flex-wrap gap-6'>
+                <div className='flex gap-2'>
                   <input
-                    type="checkbox"
-                    id="parking"
-                    className="w-5"
+                    type='checkbox'
+                    id='parking'
+                    className='w-5'
                     onChange={handleChange}
                     checked={formData.parking}
                   />
                   <span>Parking spot</span>
                 </div>
-                <div className="flex gap-2">
+                <div className='flex gap-2'>
                   <input
-                    type="checkbox"
-                    id="furnished"
-                    className="w-5"
+                    type='checkbox'
+                    id='furnished'
+                    className='w-5'
                     onChange={handleChange}
                     checked={formData.furnished}
                   />
                   <span>Furnished</span>
                 </div>
-                <div className="flex gap-2">
+                <div className='flex gap-2'>
                   <input
-                    type="checkbox"
-                    id="offer"
-                    className="w-5"
+                    type='checkbox'
+                    id='offer'
+                    className='w-5'
                     onChange={handleChange}
                     checked={formData.offer}
                   />
@@ -526,24 +555,28 @@ export default function CreateListing() {
       case 3:
         return (
           <>
-            <div className="">
-              <h2 className="text-xl pb-1 font-semibold">
+            <div className=''>
+              <h2 className='text-xl pb-1 font-semibold'>
                 Description and images
               </h2>
-              <p className="text-base opacity-80 ">
+              <p className='text-base opacity-80 '>
                 Property Description and images..
               </p>
             </div>
 
+<<<<<<< HEAD
             <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+=======
+            <div className='grid grid-cols-2 gap-4'>
+>>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
               <div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-medium text-sm">Description </label>
+                <div className='flex flex-col gap-2'>
+                  <label className='font-medium text-sm'>Description </label>
                   <div>
                     <CKEditor
-                      className="h-10"
+                      className='h-10'
                       editor={ClassicEditor}
-                      data=""
+                      data=''
                       onChange={(event, editor) => {
                         setFormData({
                           ...formData,
@@ -555,50 +588,50 @@ export default function CreateListing() {
                 </div>
               </div>
               <div>
-                <p className="font-medium text-sm pb-2">
+                <p className='font-medium text-sm pb-2'>
                   Images:
-                  <span className="font-normal text-gray-600 ml-2">
+                  <span className='font-normal text-gray-600 ml-2'>
                     The first image will be the cover (max 20)
                   </span>
                 </p>
-                <div className="flex gap-4">
+                <div className='flex gap-4'>
                   <input
                     onChange={(e) => setFiles(e.target.files)}
-                    className="p-3 border border-gray-300 rounded w-full"
-                    type="file"
-                    id="images"
-                    accept="image/*"
+                    className='p-3 border border-gray-300 rounded w-full'
+                    type='file'
+                    id='images'
+                    accept='image/*'
                     multiple
                   />
                   <button
-                    type="button"
+                    type='button'
                     disabled={uploading}
                     onClick={handleImageSubmit}
-                    className="p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80"
+                    className='p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80'
                   >
                     {uploading ? "Uploading..." : "Upload"}
                   </button>
                 </div>
-                <p className="text-red-700 text-sm">
+                <p className='text-red-700 text-sm'>
                   {imageUploadError && imageUploadError}
                 </p>
-                <div className="grid gap-3 p-2 grid-cols-4">
+                <div className='grid gap-3 p-2 grid-cols-4'>
                   {formData.imageUrls.length > 0 &&
                     formData.imageUrls.map((url, index) => (
-                      <div key={url} className="relative w-full">
-                        <div className="relative w-full h-[70px] group">
+                      <div key={url} className='relative w-full'>
+                        <div className='relative w-full h-[70px] group'>
                           <img
                             src={url}
-                            alt="listing image"
-                            className="w-full h-full object-cover"
+                            alt='listing image'
+                            className='w-full h-full object-cover'
                           />
-                          <div className="absolute inset-0 bg-black h-full opacity-0 group-hover:opacity-50 transition-opacity">
+                          <div className='absolute inset-0 bg-black h-full opacity-0 group-hover:opacity-50 transition-opacity'>
                             {/* Add any overlay content here */}
                           </div>
                           <button
-                            type="button"
+                            type='button'
                             onClick={() => handleRemoveImage(index)}
-                            className="absolute top-0 right-0 p-2 font-extrabold text-white rounded-lg uppercase hover:opacity-75"
+                            className='absolute top-0 right-0 p-2 font-extrabold text-white rounded-lg uppercase hover:opacity-75'
                           >
                             <ImCross />
                           </button>
@@ -613,29 +646,36 @@ export default function CreateListing() {
       case 4:
         return (
           <>
-            <div className="">
-              <h2 className="text-xl pb-1 font-semibold">
+            <div className=''>
+              <h2 className='text-xl pb-1 font-semibold'>
                 Additional information
               </h2>
-              <p className="text-base opacity-80 ">
+              <p className='text-base opacity-80 '>
                 Additional informations like Ground Rent Council Tax etc..
               </p>
             </div>
+<<<<<<< HEAD
             <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm">
+=======
+            <div className='grid grid-cols-2 gap-4'>
+              <div className='flex flex-col gap-2'>
+                <label className='font-medium text-sm'>
+>>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
                   Time remaining on lease
                 </label>
                 <input
-                  type="text"
-                  placeholder="e.g 20 years"
-                  className="outline outline-1 rounded p-3"
-                  id="remainingOnLease"
+                  type='text'
+                  placeholder='e.g 20 years'
+                  className='outline outline-1 rounded p-3'
+                  id='remainingOnLease'
                   required
                   onChange={handleChange}
                   value={formData.remainingOnLease}
                 />
               </div>
+<<<<<<< HEAD
               <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm">Ground Rent</label>
                 <input
@@ -643,11 +683,21 @@ export default function CreateListing() {
                   placeholder="e.g £90000 "
                   className="outline outline-1 rounded p-3"
                   id="groundRent"
+=======
+              <div className='flex flex-col gap-2'>
+                <label className='font-medium text-sm'>Ground Rent</label>
+                <input
+                  type='text'
+                  placeholder='e.g £90000 '
+                  className='outline outline-1 rounded p-3'
+                  id='groundRent'
+>>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
                   required
                   onChange={handleChange}
                   value={formData.groundRent}
                 />
               </div>
+<<<<<<< HEAD
               <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm">Council Tax</label>
                 <input
@@ -655,11 +705,21 @@ export default function CreateListing() {
                   placeholder="e.g C"
                   className="outline outline-1 rounded p-3"
                   id="councilTax"
+=======
+              <div className='flex flex-col gap-2'>
+                <label className='font-medium text-sm'>Council Tax</label>
+                <input
+                  type='text'
+                  placeholder='e.g C'
+                  className='outline outline-1 rounded p-3'
+                  id='councilTax'
+>>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
                   required
                   onChange={handleChange}
                   value={formData.councilTax}
                 />
               </div>
+<<<<<<< HEAD
               <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm">Service Charge</label>
                 <input
@@ -667,11 +727,21 @@ export default function CreateListing() {
                   placeholder="e.g £700"
                   className="outline outline-1 rounded p-3"
                   id="serviceCharge"
+=======
+              <div className='flex flex-col gap-2'>
+                <label className='font-medium text-sm'>Service Charge</label>
+                <input
+                  type='text'
+                  placeholder='e.g £700'
+                  className='outline outline-1 rounded p-3'
+                  id='serviceCharge'
+>>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
                   required
                   onChange={handleChange}
                   value={formData.serviceCharge}
                 />
               </div>
+<<<<<<< HEAD
               <div className="flex flex-col gap-2">
                 <label className="font-medium text-sm">Tenure</label>
                 <input
@@ -679,6 +749,15 @@ export default function CreateListing() {
                   placeholder="e.g Leasehold"
                   className="outline outline-1 rounded p-3"
                   id="tenure"
+=======
+              <div className='flex flex-col gap-2'>
+                <label className='font-medium text-sm'>Tenure</label>
+                <input
+                  type='text'
+                  placeholder='e.g Leasehold'
+                  className='outline outline-1 rounded p-3'
+                  id='tenure'
+>>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
                   required
                   onChange={handleChange}
                   value={formData.tenure}
@@ -694,19 +773,19 @@ export default function CreateListing() {
 
   const renderNavigationButtons = () => {
     return (
-      <div className="flex justify-between mt-4">
+      <div className='flex justify-between mt-4'>
         {currentStep > 1 && (
           <button
-            type="button"
+            type='button'
             onClick={handlePrevStep}
-            className="p-3 w-[130px] bg-lightblue text-white rounded-lg  hover:opacity-95"
+            className='p-3 w-[130px] bg-lightblue text-white rounded-lg  hover:opacity-95'
           >
             Previous
           </button>
         )}
         {currentStep < 4 && (
           <button
-            type="button"
+            type='button'
             onClick={handleNextStep}
             className={`py-3 w-[130px] bg-lightblue -z-10 text-white rounded-lg  hover:opacity-95 ${
               isNextButtonDisabled ? "opacity-80 cursor-not-allowed" : ""
@@ -718,7 +797,7 @@ export default function CreateListing() {
         )}
         {currentStep === 4 && (
           <button
-            type="submit"
+            type='submit'
             disabled={loading || uploading}
             className={`p-3 w-[130px] bg-lightblue text-white rounded-lg  hover:opacity-95 disabled:opacity-80 ${
               loading || uploading ? "cursor-not-allowed" : ""
@@ -733,8 +812,8 @@ export default function CreateListing() {
 
   return (
     <>
-      <main className="">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <main className=''>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
           {renderStepContent()}
           {renderNavigationButtons()}
         </form>
