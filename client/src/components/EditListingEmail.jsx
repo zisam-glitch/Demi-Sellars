@@ -174,65 +174,64 @@ export default function Profile() {
 
   return (
     <>
-      <div className='p-14'>
+      <div className="p-20">
         <form
           onSubmit={handleSubmit}
-          className='flex flex-col gap-6 items-start'
+          className="flex flex-col gap-6 items-start"
         >
-          <div className='flex justify-between w-full items-center'>
-            <h1 className='text-3xl font-semibold my-7'>Profile</h1>
+          <div className="flex justify-between w-full items-center">
+            <h1 className="text-3xl font-semibold my-7">Profile</h1>
 
             <input
               onChange={(e) => setFile(e.target.files[0])}
-              type='file'
+              type="file"
               ref={fileRef}
               hidden
-              accept='image/*'
+              accept="image/*"
             />
             <img
               onClick={() => fileRef.current.click()}
               src={formData.avatar || currentUser.avatar}
-              alt='profile'
-              className='rounded-full h-20 w-20 object-cover cursor-pointer mt-2'
+              alt="profile"
+              className="rounded-full h-20 w-20 object-cover cursor-pointer mt-2"
             />
           </div>
-          <p className='text-sm self-center'>
+          <p className="text-sm self-center">
             {fileUploadError ? (
-              <span className='text-red-700'>
+              <span className="text-red-700">
                 Error Image upload (image must be less than 2 mb)
               </span>
             ) : filePerc > 0 && filePerc < 100 ? (
-              <span className='text-slate-700'>{`Uploading ${filePerc}%`}</span>
+              <span className="text-slate-700">{`Uploading ${filePerc}%`}</span>
             ) : filePerc === 100 ? (
-              <span className='text-green-700'>
+              <span className="text-green-700">
                 Image successfully uploaded!
               </span>
             ) : (
               ""
             )}
           </p>
-          <div className='grid grid-cols-2 w-full gap-6'>
-            <div className='flex flex-col gap-3'>
-              <label className='font-medium text-base'>Email</label>
+          <div className="grid grid-cols-2 w-full gap-6">
+           
+            <div className="flex flex-col gap-3">
+              <label className="font-medium text-base">Email</label>
               <input
                 readOnly={true}
-                type='email'
-                placeholder='email'
-                id='email'
+                type="email"
+                placeholder="email"
+                id="email"
                 defaultValue={currentUser.email}
-                className='outline outline-1 rounded p-3'
+                className="outline outline-1 rounded p-3"
                 onChange={handleChange}
               />
             </div>
-
-            <div className='flex flex-col gap-3'>
-              <label className='text-transparent font-medium text-base'>
-                .
-              </label>
+           
+            <div className="flex flex-col gap-3">
+            <label className="text-transparent font-medium text-base">.</label>
 
               <button
                 disabled={loading}
-                className='bg-lightblue text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
+                className="bg-lightblue text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
               >
                 {loading ? "Loading..." : "Update"}
               </button>
@@ -240,12 +239,12 @@ export default function Profile() {
           </div>
 
           {passwordMismatchError && (
-            <p className='text-red-700'>Passwords do not match.</p>
+            <p className="text-red-700">Passwords do not match.</p>
           )}
         </form>
 
-        <p className='text-red-700 mt-5'>{error ? error : ""}</p>
-        <p className='text-green-700 mt-5'>
+        <p className="text-red-700 mt-5">{error ? error : ""}</p>
+        <p className="text-green-700 mt-5">
           {updateSuccess ? "User is updated successfully!" : ""}
         </p>
       </div>

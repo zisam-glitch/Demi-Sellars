@@ -7,6 +7,7 @@ import { CiCalculator1 } from "react-icons/ci";
 import { CiSettings } from "react-icons/ci";
 import { CiBoxList } from "react-icons/ci";
 import { TfiStamp } from "react-icons/tfi";
+import { MdOutlineContacts } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { MdManageSearch } from "react-icons/md";
 import { IoIosLogOut } from "react-icons/io";
@@ -15,53 +16,51 @@ export default function Sidebar() {
   const { currentUser } = useSelector((state) => state.user);
 
   return (
-    <div className='md:min-w-[20%] min-w-[10%] h-full bg-white border-r-2 border-t-2'>
-      <div className='h-screen flex flex-col justify-between pt-2 relative'>
+    <div className="w-[22%] md:block hidden bg-white border-r-2">
+      <div className="h-screen flex flex-col justify-between  py-10">
         <div>
-          <div className='border-b-2'>
-            <div className=''>
-              <nav className=' flex flex-col gap-1 ' id='sidebar'>
+          <div className="px-3 border-b-2  ">
+            <Link to="/">
+              <h1 className="font-bold text-2xl px-4 md:text-2xl flex flex-wrap">
+                <span className="text-darkblue">Demi</span>
+                <span className="text-lightblue">Sellars</span>
+              </h1>
+            </Link>
+            <div className="py-6">
+              <nav className=" flex flex-col gap-1 " id="sidebar">
                 <NavLink
-                  className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
-                  to='/my-account'
+                  className="text-lg px-4 py-2"
+                  to="/"
                   exact
-                  activeClassName=''
+                  activeClassName=""
                 >
-                  <IoHomeOutline className=' ' />
-                  <span className='hidden md:block'>Dashboard</span>
+                  <span className="flex items-center gap-3">
+                    <IoHomeOutline className=" " />
+                    Home
+                  </span>
                 </NavLink>
 
                 <NavLink
-<<<<<<< HEAD
                   className="text-lg px-4 py-2"
                   to="/mortgage-calculator"
-=======
-                  className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
-                  to='/dashboard/mortgage-calculator'
->>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
                   exact
-                  activeClassName=''
+                  activeClassName=""
                 >
-                  <CiCalculator1 className='' />
-                  <span className='hidden md:block'>Mortgage Calculator </span>
+                  <span className="flex items-center gap-3">
+                    <CiCalculator1 className="" />
+                    Mortgage Calculator{" "}
+                  </span>
                 </NavLink>
-<<<<<<< HEAD
                 {/* <NavLink
                   className="text-lg px-4 py-2"
                   to="/my-listings"
-=======
-                <NavLink
-                  className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
-                  to='/stamp'
->>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
                   exact
-                  activeClassName=''
+                  activeClassName=""
                 >
-                  <TfiStamp className=' ' />
-                  <span className='hidden md:block'>
+                  <span className="flex items-center gap-3">
+                    <TfiStamp className=" " />
                     Stamp Duty Calculator{" "}
                   </span>
-<<<<<<< HEAD
                 </NavLink> */}
                 <NavLink
                   className="text-lg px-4 py-2"
@@ -73,50 +72,56 @@ export default function Sidebar() {
                     <MdOutlineContacts className="" />
                     Contact Us{" "}
                   </span>
-=======
->>>>>>> 6eb51089ef69b2aa4f335e004709fcfbba80df2f
                 </NavLink>
               </nav>
             </div>
           </div>
-          <div className=' py-6  '>
-            <nav className=' flex flex-col gap-0 ' id='sidebar'>
+          <div className=" py-6  ">
+            <nav className=" flex flex-col px-3 gap-0 " id="sidebar">
               <NavLink
-                className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
-                to='/listing/saved'
+                className="text-lg px-4 py-2"
+                to="/listing/saved"
                 exact
-                activeClassName=''
+                activeClassName=""
               >
-                <CiBookmark className='text-normal ' />
-                <span className='hidden md:block'>Saved listings</span>
+                <span className="flex items-center gap-3">
+                  <CiBookmark className="text-normal " />
+                  Saved listings
+                </span>
               </NavLink>
               <NavLink
-                className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
-                to='/create-listing'
+                className="text-lg px-4 py-2"
+                to="/create-listing"
                 exact
-                activeClassName=''
+                activeClassName=""
               >
-                <IoCreateOutline className='text-lg' />
-                <span className='hidden md:block'>Create listing</span>
+                <span className="flex items-center gap-3">
+                  <IoCreateOutline className="text-lg" />
+                  Create listing
+                </span>
               </NavLink>
               <NavLink
-                className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
-                to='/my-listings'
+                className="text-lg px-4 py-2"
+                to="/my-listings"
                 exact
-                activeClassName=''
+                activeClassName=""
               >
-                <CiBoxList className='text-lg' />
-                <span className='hidden md:block'>My listings</span>
+                <span className="flex items-center gap-3">
+                  <CiBoxList className="text-lg" />
+                  My listings
+                </span>
               </NavLink>
               {currentUser && currentUser.role === "admin" ? (
                 <NavLink
-                  className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
-                  to='/listing/requests'
+                  className="text-lg px-4 py-2"
+                  to="/listing/requests"
                   exact
-                  activeClassName=''
+                  activeClassName=""
                 >
-                  <MdManageSearch className='text-lg' />
-                  <span className='hidden md:block'>Manage listings</span>
+                  <span className="flex items-center gap-3">
+                    <MdManageSearch className="text-lg" />
+                    Manage listings
+                  </span>
                 </NavLink>
               ) : (
                 ""
@@ -124,25 +129,29 @@ export default function Sidebar() {
             </nav>
           </div>
         </div>
-        <div className='sticky bottom-0'>
-          <nav className=' flex flex-col gap-0 ' id='sidebar'>
+        <div>
+          <nav className=" flex flex-col px-3 gap-0 " id="sidebar">
             <NavLink
-              className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
-              to='/settings'
+              className="text-lg px-4 py-2"
+              to="/settings"
               exact
-              activeClassName=''
+              activeClassName=""
             >
-              <CiSettings className=' text-lg' />
-              <span className='hidden md:block'>Settings</span>
+              <span className="flex items-center gap-3">
+                <CiSettings className=" text-lg" />
+                Settings
+              </span>
             </NavLink>
             <NavLink
-              className='text-lg justify-center md:justify-start md:pl-4 py-2 flex gap-2 items-center'
-              to='/sign-out'
+              className="text-lg px-4 py-2"
+              to="/sign-out"
               exact
-              activeClassName=''
+              activeClassName=""
             >
-              <IoIosLogOut className='' />
-              <span className='hidden md:block'>Sign Out</span>
+              <span className="flex items-center gap-3">
+                <IoIosLogOut className="" />
+                Sing Out
+              </span>
             </NavLink>
           </nav>
         </div>
